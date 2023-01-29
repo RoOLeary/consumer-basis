@@ -33,6 +33,9 @@ module.exports = {
       black: '900',
     },
     extend: {
+      width:{
+        '32': '8rem'
+      },
       animation: {
         'fade-in': 'fade-in 0.5s linear forwards',
         marquee: 'marquee var(--marquee-duration) linear infinite',

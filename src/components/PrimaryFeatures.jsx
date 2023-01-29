@@ -40,7 +40,7 @@ const features = [
   {
     name: 'Always Lowest Prices',
     description:
-      'We hide your stock purchases behind thousands of anonymous trading accounts, so suspicious activity can never be traced back to you.',
+      'We guarantee lower prices than our competitors',
     icon: DeviceTouchIcon,
     screen: DeliveryScreen,
   },

@@ -6,49 +6,49 @@ const features = [
   {
     name: 'Commercial',
     description:
-      'Whether it’s $1 or $1,000,000, we can put your money to work for you.',
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
     icon: DeviceArrowIcon,
   },
   {
     name: 'Headquarters',
     description:
-      'Invest in different industries to find the most opportunities to win huge.',
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
     icon: DeviceCardsIcon,
   },
   {
     name: 'Data Analysis',
     description:
-      'Get insider tips on big stock moves and act on them within seconds.',
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
     icon: DeviceClockIcon,
   },
   {
     name: 'Tech',
     description:
-      'Invite new insiders to get tips faster and beat even other Consumerusers.',
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
     icon: DeviceListIcon,
   },
   {
     name: 'Customer Success',
     description:
-      'Cutting-edge security technology that even the NSA doesn’t know about keeps you hidden.',
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
     icon: DeviceLockIcon,
   },
   {
     name: 'Internships',
     description:
-      'Watch your investments grow exponentially, leaving other investors in the dust.',
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
     icon: DeviceChartIcon,
   },
   {
     name: 'People',
     description:
-      'Cutting-edge security technology that even the NSA doesn’t know about keeps you hidden.',
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
     icon: DeviceLockIcon,
   },
   {
     name: 'Finance',
     description:
-      'Watch your investments grow exponentially, leaving other investors in the dust.',
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
     icon: DeviceChartIcon,
   },
 ]
@@ -233,6 +233,10 @@ export function SecondaryFeatures() {
             </li>
           ))}
         </ul>
+        <div className="mx-auto flex mt-8 justify-center">
+          <a className="inline-flex justify-center rounded-lg py-2 px-3 text-sm font-semibold outline-2 outline-offset-2 transition-colors bg-red-500 text-white hover:bg-red-600 active:bg-red-500 active:text-white/80 hidden lg:block bg-red-500 hover:bg-red-400 w-32
+    text-center" href="/#">All Jobs</a>
+        </div>
       </Container>
     </section>
   )
