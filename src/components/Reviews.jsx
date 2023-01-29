@@ -15,85 +15,85 @@ const reviews = [
   {
     title: 'It really works.',
     body: 'I downloaded Consumertoday and turned $5000 into $25,000 in half an hour.',
-    author: 'CrazyInvestor',
+    author: 'Foodie',
     rating: 5,
   },
   {
     title: 'You need this app.',
     body: 'I didn’t understand the stock market at all before Consumer. I still don’t, but at least I’m rich now.',
-    author: 'CluelessButRich',
+    author: 'Customer',
     rating: 5,
   },
   {
-    title: 'This shouldn’t be legal.',
+    title: 'Snappy Title',
     body: 'Consumermakes it so easy to win big in the stock market that I can’t believe it’s actually legal.',
-    author: 'LivingDaDream',
+    author: 'Foodie Customer',
     rating: 5,
   },
   {
-    title: 'Screw financial advisors.',
+    title: 'Traditional Dublin Coddle.',
     body: 'I barely made any money investing in mutual funds. With Consumer, I’m doubling my net-worth every single month.',
-    author: 'JordanBelfort1962',
+    author: 'Customer Foodie',
     rating: 5,
   },
   {
-    title: 'I love it!',
+    title: 'Traditional Dutch Stampot',
     body: 'I started providing insider information myself and now I get new insider tips every 5 minutes. I don’t even have time to act on all of them. New Lamborghini is being delivered next week!',
-    author: 'MrBurns',
+    author: 'Client Shopper',
     rating: 5,
   },
   {
-    title: 'Too good to be true.',
+    title: 'Snack Food',
     body: 'I was making money so fast with Consumerthat it felt like a scam. But I sold my shares and withdrew the money and it’s really there, right in my bank account. This app is crazy!',
-    author: 'LazyRich99',
+    author: 'Shopper Client',
     rating: 5,
   },
   {
-    title: 'Wish I could give 6 stars',
+    title: 'Something German.',
     body: 'This is literally the most important app you will ever download in your life. Get on this before it’s so popular that everyone else is getting these tips too.',
-    author: 'SarahLuvzCash',
+    author: 'Recipe Person',
     rating: 5,
   },
   {
-    title: 'Bought an island.',
+    title: 'Something French',
     body: 'Yeah, you read that right. Want your own island too? Get Consumer.',
-    author: 'ScroogeMcduck',
+    author: 'Recipe Person 2',
     rating: 5,
   },
   {
-    title: 'No more debt!',
+    title: 'Another Dutch Recipe',
     body: 'After 2 weeks of trading on ConsumerI was debt-free. Why did I even go to school at all when Consumerexists?',
-    author: 'BruceWayne',
+    author: 'Recipe Person 3',
     rating: 5,
   },
   {
-    title: 'I’m 13 and I’m rich.',
+    title: 'Nyom nyom nyom.',
     body: 'I love that with Consumer’s transaction anonymization I could sign up and start trading when I was 12 years old. I had a million dollars before I had armpit hair!',
-    author: 'RichieRich',
+    author: 'Recipe Person 4',
     rating: 5,
   },
   {
-    title: 'Started an investment firm.',
+    title: 'Lovely Fresh stuff.',
     body: 'I charge clients a 3% management fee and just throw all their investments into Consumer. Easy money!',
-    author: 'TheCountOfMonteChristo',
+    author: 'Another Recipe',
     rating: 5,
   },
   {
-    title: 'It’s like a superpower.',
+    title: 'Meal ideas for Spring time',
     body: 'Every tip Consumerhas sent me has paid off. It’s like playing Blackjack but knowing exactly what card is coming next!',
-    author: 'ClarkKent',
+    author: 'Yet another',
     rating: 5,
   },
   {
-    title: 'Quit my job.',
+    title: 'Delicious and Fast recipes.',
     body: 'I downloaded Consumerthree days ago and quit my job today. I can’t believe no one else thought to build a stock trading app that works this way!',
-    author: 'GeorgeCostanza',
+    author: 'Recipe X',
     rating: 5,
   },
   {
-    title: 'Don’t download this app',
+    title: 'Wow this app is the cat\'s pyjamas!',
     body: 'Unless you want to have the best life ever! I am literally writing this from a yacht.',
-    author: 'JeffBezos',
+    author: 'User 420',
     rating: 5,
   },
 ]
@@ -114,7 +114,7 @@ function StarRating({ rating }) {
           key={index}
           className={clsx(
             'h-5 w-5',
-            rating > index ? 'fill-cyan-500' : 'fill-gray-300'
+            rating > index ? 'fill-yellow-400' : 'fill-gray-300'
           )}
         />
       ))}
@@ -253,7 +253,7 @@ function ReviewGrid() {
 export function Reviews() {
   return (
     <section
-      id="reviews"
+      id="careers"
       aria-labelledby="reviews-title"
       className="pt-20 pb-16 sm:pt-32 sm:pb-24"
     >
@@ -262,10 +262,10 @@ export function Reviews() {
           id="reviews-title"
           className="text-3xl font-medium tracking-tight text-gray-900 sm:text-center"
         >
-          Everyone is changing their life with Consumer.
+          Consumer vacancies (or perhaps recipes)
         </h2>
         <p className="mt-2 text-lg text-gray-600 sm:text-center">
-          Thousands of people have doubled their net-worth in the last 30 days.
+          Note; trying out this vertical style css scroller. Could be worth looking at for the comp in flight. 
         </p>
         <ReviewGrid />
       </Container>

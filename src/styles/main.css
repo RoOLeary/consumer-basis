@@ -1,3 +1,4 @@
+
 @import './globals/fonts.css';
 @import './components/animations.css';
 
@@ -8,3 +9,4 @@
 #__next {
   min-height: 100%;
 }
+

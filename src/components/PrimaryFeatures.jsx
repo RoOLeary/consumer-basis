@@ -24,21 +24,21 @@ const MotionAppScreenBody = motion(AppScreen.Body)
 
 const features = [
   {
-    name: 'Invite friends for better returns',
+    name: 'Always delivered for free',
     description:
-      'For every friend you invite to Consumer, you get insider notifications 5 seconds sooner. And it’s 10 seconds if you invite an insider.',
+      'Always delivered for free',
     icon: DeviceUserIcon,
     screen: InviteScreen,
   },
   {
-    name: 'Notifications on stock dips',
+    name: 'Alway super fresh',
     description:
-      'Get a push notification every time we find out something that’s going to lower the share price on your holdings so you can sell before the information hits the public markets.',
+      'Alway super fresh',
     icon: DeviceNotificationIcon,
     screen: StocksScreen,
   },
   {
-    name: 'Invest what you want',
+    name: 'Always Lowest Prices',
     description:
       'We hide your stock purchases behind thousands of anonymous trading accounts, so suspicious activity can never be traced back to you.',
     icon: DeviceTouchIcon,
@@ -171,18 +171,17 @@ function InviteScreen({ custom, animated = false }) {
   return (
     <AppScreen className="w-full">
       <MotionAppScreenHeader {...(animated ? headerAnimation : {})}>
-        <AppScreen.Title>Invite people</AppScreen.Title>
+        <AppScreen.Title>Join us today!</AppScreen.Title>
         <AppScreen.Subtitle>
-          Get tips <span className="text-white">5s sooner</span> for every
-          invite.
+          Get shifts <span className="text-white">this week</span> plus bonuses.
         </AppScreen.Subtitle>
       </MotionAppScreenHeader>
       <MotionAppScreenBody {...(animated ? { ...bodyAnimation, custom } : {})}>
         <div className="px-4 py-6">
           <div className="space-y-6">
             {[
-              { label: 'Full name', value: 'Albert H. Wiggin' },
-              { label: 'Email address', value: 'awiggin@chase.com' },
+              { label: 'Full name', value: 'Albert H. Eijn' },
+              { label: 'Email address', value: 'ah@funnyemail.com' },
             ].map((field) => (
               <div key={field.label}>
                 <div className="text-sm text-gray-500">{field.label}</div>
@@ -192,8 +191,8 @@ function InviteScreen({ custom, animated = false }) {
               </div>
             ))}
           </div>
-          <div className="mt-6 rounded-lg bg-cyan-500 py-2 px-3 text-center text-sm font-semibold text-white">
-            Invite person
+          <div className="mt-6 rounded-lg bg-red-500 py-2 px-3 text-center text-sm font-semibold text-white">
+            Sign up
           </div>
         </div>
       </MotionAppScreenBody>
@@ -205,8 +204,8 @@ function StocksScreen({ custom, animated = false }) {
   return (
     <AppScreen className="w-full">
       <MotionAppScreenHeader {...(animated ? headerAnimation : {})}>
-        <AppScreen.Title>Stocks</AppScreen.Title>
-        <AppScreen.Subtitle>March 9, 2022</AppScreen.Subtitle>
+        <AppScreen.Title>Super Fresh...</AppScreen.Title>
+        <AppScreen.Subtitle>Jan 29, 2023</AppScreen.Subtitle>
       </MotionAppScreenHeader>
       <MotionAppScreenBody {...(animated ? { ...bodyAnimation, custom } : {})}>
         <div className="divide-y divide-gray-100">
@@ -219,49 +218,49 @@ function StocksScreen({ custom, animated = false }) {
               logo: LaravelLogo,
             },
             {
-              name: 'Tuple',
+              name: 'Filament',
               price: '5,451.10',
               change: '-3.38%',
               color: '#5A67D8',
               logo: TupleLogo,
             },
             {
-              name: 'Transistor',
+              name: 'NextJS',
               price: '4,098.41',
               change: '+6.25%',
               color: '#2A5B94',
               logo: TransistorLogo,
             },
             {
-              name: 'Diageo',
+              name: 'Tailwind',
               price: '250.65',
               change: '+1.25%',
               color: '#3320A7',
               logo: DiageoLogo,
             },
             {
-              name: 'StaticKit',
+              name: 'Style Components',
               price: '250.65',
               change: '-3.38%',
               color: '#2A3034',
               logo: StaticKitLogo,
             },
             {
-              name: 'Statamic',
+              name: 'Artisan',
               price: '5,040.85',
               change: '-3.11%',
               color: '#0EA5E9',
               logo: StatamicLogo,
             },
             {
-              name: 'Mirage',
+              name: 'Docker',
               price: '140.44',
               change: '+9.09%',
               color: '#16A34A',
               logo: MirageLogo,
             },
             {
-              name: 'Reversable',
+              name: 'Turbopack',
               price: '550.60',
               change: '-1.25%',
               color: '#8D8D8D',
@@ -279,14 +278,14 @@ function StocksScreen({ custom, animated = false }) {
                 {stock.name}
               </div>
               <div className="flex-none text-right">
-                <div className="text-sm font-medium text-gray-900">
+                <div className="text-sm fonf$t-medium text-gray-900">
                   {stock.price}
                 </div>
                 <div
                   className={clsx(
                     'text-xs leading-5',
                     stock.change.startsWith('+')
-                      ? 'text-cyan-500'
+                      ? 'text-red-500'
                       : 'text-gray-500'
                   )}
                 >
@@ -305,9 +304,9 @@ function InvestScreen({ custom, animated = false }) {
   return (
     <AppScreen className="w-full">
       <MotionAppScreenHeader {...(animated ? headerAnimation : {})}>
-        <AppScreen.Title>Buy $LA</AppScreen.Title>
+        <AppScreen.Title>Try PICNIC Today!</AppScreen.Title>
         <AppScreen.Subtitle>
-          <span className="text-white">$34.28</span> per share
+          <span className="text-white">Starts from €35</span>
         </AppScreen.Subtitle>
       </MotionAppScreenHeader>
       <MotionAppScreenBody {...(animated ? { ...bodyAnimation, custom } : {})}>
@@ -319,11 +318,11 @@ function InvestScreen({ custom, animated = false }) {
                 label: 'Current market price',
                 value: (
                   <div className="flex">
-                    $34.28
+                    €34.28
                     <svg viewBox="0 0 24 24" fill="none" className="h-6 w-6">
                       <path
                         d="M17 15V7H9M17 7 7 17"
-                        stroke="#06B6D4"
+                        stroke="#f00"
                         strokeWidth="2"
                         strokeLinecap="round"
                         strokeLinejoin="round"
@@ -332,7 +331,7 @@ function InvestScreen({ custom, animated = false }) {
                   </div>
                 ),
               },
-              { label: 'Estimated cost', value: '$3,428.00' },
+              { label: 'Estimated cost', value: '€3,428.00' },
             ].map((item) => (
               <div
                 key={item.label}
@@ -344,8 +343,8 @@ function InvestScreen({ custom, animated = false }) {
                 </div>
               </div>
             ))}
-            <div className="rounded-lg bg-cyan-500 py-2 px-3 text-center text-sm font-semibold text-white">
-              Buy shares
+            <div className="rounded-lg bg-red-500 py-2 px-3 text-center text-sm font-semibold text-white">
+              Buy Now
             </div>
           </div>
         </div>
@@ -417,7 +416,7 @@ function FeaturesDesktop() {
       </Tab.List>
       <div className="relative col-span-6">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
-          <CircleBackground color="#13B5C8" className="animate-spin-slower" />
+          <CircleBackground color="#f00" className="animate-spin-slower" />
         </div>
         <PhoneFrame className="z-10 mx-auto w-full max-w-[366px]">
           <Tab.Panels as={Fragment}>
@@ -494,7 +493,7 @@ function FeaturesMobile() {
             <div className="relative transform overflow-hidden rounded-2xl bg-gray-800 px-5 py-6">
               <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
                 <CircleBackground
-                  color="#13B5C8"
+                  color="#f00"
                   className={featureIndex % 2 === 1 ? 'rotate-180' : undefined}
                 />
               </div>
@@ -542,21 +541,18 @@ function FeaturesMobile() {
 export function PrimaryFeatures() {
   return (
     <section
-      id="features"
+      id="teams"
       aria-label="Features for investing all your money"
       className="bg-gray-900 py-20 sm:py-32"
     >
       <Container>
         <div className="mx-auto max-w-2xl lg:mx-0 lg:max-w-3xl">
-          <h2 className="text-3xl font-medium tracking-tight text-white">
-            Every feature you need to win. Try it for yourself.
+          <h2 className="text-3xl font-black tracking-tight text-white">
+            Every product you need! Try it for yourself.
           </h2>
-          <p className="mt-2 text-lg text-gray-400">
-            Consumerwas built for investors like you who play by their own rules
-            and aren’t going to let SEC regulations get in the way of their
-            dreams. If other investing tools are afraid to build it, Consumerhas
-            it.
-          </p>
+          {/* <p className="mt-2 text-lg text-gray-400">
+            Consumer was built to make grocery shopping and meals etc a heck of a lot easier
+          </p> */}
         </div>
       </Container>
       <div className="mt-16 md:hidden">

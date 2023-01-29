@@ -47,8 +47,8 @@ function BackgroundIllustration(props) {
             y2="1025"
             gradientUnits="userSpaceOnUse"
           >
-            <stop stopColor="#06b6d4" />
-            <stop offset="1" stopColor="#06b6d4" stopOpacity="0" />
+            <stop stopColor="#f00" />
+            <stop offset="1" stopColor="#f00" stopOpacity="0" />
           </linearGradient>
         </defs>
       </svg>
@@ -77,8 +77,8 @@ function BackgroundIllustration(props) {
             y2="913"
             gradientUnits="userSpaceOnUse"
           >
-            <stop stopColor="#06b6d4" />
-            <stop offset="1" stopColor="#06b6d4" stopOpacity="0" />
+            <stop stopColor="#f00" />
+            <stop offset="1" stopColor="#f00" stopOpacity="0" />
           </linearGradient>
         </defs>
       </svg>
@@ -210,7 +210,7 @@ function Chart({
         strokeLinejoin="round"
         initial={{ pathLength: 0 }}
         transition={{ duration: 1 }}
-        {...(isInView ? { stroke: '#06b6d4', animate: { pathLength: 1 } } : {})}
+        {...(isInView ? { stroke: '#f00', animate: { pathLength: 1 } } : {})}
         onUpdate={({ pathLength }) => {
           pathWidth.set(
             pathRef.current.getPointAtLength(
@@ -227,7 +227,7 @@ function Chart({
             y1={points[activePointIndex].y}
             x2={totalWidth}
             y2={points[activePointIndex].y}
-            stroke="#06b6d4"
+            stroke="#f00"
             strokeDasharray="1 3"
           />
           <circle
@@ -236,7 +236,7 @@ function Chart({
             cy={points[activePointIndex].y}
             fill="#fff"
             strokeWidth="2"
-            stroke="#06b6d4"
+            stroke="#f00"
           />
         </>
       )}
@@ -260,9 +260,9 @@ function AppDemo() {
         <div className="p-4">
           <div className="flex gap-2">
             <div className="text-xs leading-6 text-gray-500">
-              Tailwind Labs, Inc.
+              Picnic Technologies B.V.
             </div>
-            <div className="text-sm text-gray-900">$CSS</div>
+            <div className="text-sm text-gray-900">€420</div>
             <svg viewBox="0 0 24 24" className="ml-auto h-6 w-6" fill="none">
               <path
                 d="M5 12a7 7 0 1 1 14 0 7 7 0 0 1-14 0ZM12 9v6M15 12H9"
@@ -278,7 +278,7 @@ function AppDemo() {
               <div className="text-2xl tabular-nums tracking-tight text-gray-900">
                 {activeValue.toFixed(2)}
               </div>
-              <div className="text-sm text-gray-900">USD</div>
+              <div className="text-sm text-gray-900">EUR</div>
               {percentageChange && (
                 <div
                   className={clsx(
@@ -310,9 +310,9 @@ function AppDemo() {
                 onChangeActivePointIndex={setActivePointIndex}
               />
             </div>
-            <div className="mt-4 rounded-lg bg-cyan-500 py-2 px-4 text-center text-sm font-semibold text-white">
+            {/* <div className="mt-4 rounded-lg bg-cyan-500 py-2 px-4 text-center text-sm font-semibold text-white">
               Trade
-            </div>
+            </div> */}
             <div className="mt-3 divide-y divide-gray-100 text-sm">
               <div className="flex justify-between py-1">
                 <div className="text-gray-500">Open</div>
@@ -340,8 +340,8 @@ export function Hero() {
       <Container>
         <div className="lg:grid lg:grid-cols-12 lg:gap-x-8 lg:gap-y-20">
           <div className="relative z-10 mx-auto max-w-2xl lg:col-span-7 lg:max-w-none lg:pt-6 xl:col-span-6">
-            <h1 className="text-4xl font-medium tracking-tight text-gray-900">
-              Supermarket on wheels
+            <h1 className="text-4xl tracking-tight text-gray-900">
+              <span className={"font-black"}>Supermarket</span> on wheels
             </h1>
             <p className="mt-6 text-lg text-gray-600">
               By leveraging insights from our network of industry insiders,
