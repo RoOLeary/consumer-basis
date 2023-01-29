@@ -343,10 +343,10 @@ export function Hero() {
             <h1 className="text-4xl tracking-tight text-gray-900">
               <span className={"font-black"}>Supermarket</span> on wheels
             </h1>
-            <p className="mt-6 text-lg text-gray-600">
+            {/* <p className="mt-6 text-lg text-gray-600">
               By leveraging insights from our network of industry insiders,
               you’ll know exactly when to buy to groceries.
-            </p>
+            </p> */}
             <div className="mt-8 flex flex-wrap gap-x-6 gap-y-4">
               <AppStoreLink />
               <Button

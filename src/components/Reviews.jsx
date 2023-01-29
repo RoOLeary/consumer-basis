@@ -14,7 +14,7 @@ import { Container } from '@/components/Container'
 const reviews = [
   {
     title: 'It really works.',
-    body: 'I downloaded Consumertoday and turned $5000 into $25,000 in half an hour.',
+    body: 'Yowzers! This Picnic website really is the business!',
     author: 'Foodie',
     rating: 5,
   },

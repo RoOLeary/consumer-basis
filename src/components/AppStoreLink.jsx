@@ -9,7 +9,7 @@ export function AppStoreLink({ color = 'black' }) {
       className={clsx(
         'rounded-lg transition-colors',
         color === 'black'
-          ? 'bg-gray-800 text-white hover:bg-gray-900'
+          ? 'bg-gray-800 text-white hover:bg-red-400'
           : 'bg-white text-gray-900 hover:bg-gray-50'
       )}
     >
