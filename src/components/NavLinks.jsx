@@ -6,7 +6,7 @@ export function NavLinks() {
   let [hoveredIndex, setHoveredIndex] = useState(null)
 
   return [
-    ['Teams', '#teams'],
+    ['App', '#app'],
     ['Careers', '#careers'],
     ['Blog', '#pricing'],
     ['Contact', '#faqs'],

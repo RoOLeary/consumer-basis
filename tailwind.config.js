@@ -48,9 +48,13 @@ module.exports = {
       },
       colors: ({ colors }) => ({
         gray: colors.neutral,
+        biege: '#e7e2cc'
       }),
       fontFamily: {
         sans: ['Inter', ...defaultTheme.fontFamily.sans],
+      },
+      backgroundColor:{
+        biege: '#e7e2cc'
       },
       keyframes: {
         'fade-in': {

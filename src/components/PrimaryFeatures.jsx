@@ -28,21 +28,21 @@ const features = [
     description:
       'Always delivered for free',
     icon: DeviceUserIcon,
-    screen: InviteScreen,
+    screen: JoinUsScreen,
   },
   {
     name: 'Alway super fresh',
     description:
       'Alway super fresh',
     icon: DeviceNotificationIcon,
-    screen: StocksScreen,
+    screen: PricesScreen,
   },
   {
     name: 'Always Lowest Prices',
     description:
       'We hide your stock purchases behind thousands of anonymous trading accounts, so suspicious activity can never be traced back to you.',
     icon: DeviceTouchIcon,
-    screen: InvestScreen,
+    screen: DeliveryScreen,
   },
 ]
 
@@ -167,13 +167,13 @@ const bodyAnimation = {
   },
 }
 
-function InviteScreen({ custom, animated = false }) {
+function JoinUsScreen({ custom, animated = false }) {
   return (
     <AppScreen className="w-full">
       <MotionAppScreenHeader {...(animated ? headerAnimation : {})}>
-        <AppScreen.Title>Join us today!</AppScreen.Title>
+        <AppScreen.Title>Join Picnic!</AppScreen.Title>
         <AppScreen.Subtitle>
-          Get shifts <span className="text-white">this week</span> plus bonuses.
+          Start <span className="text-white">this week!</span> 
         </AppScreen.Subtitle>
       </MotionAppScreenHeader>
       <MotionAppScreenBody {...(animated ? { ...bodyAnimation, custom } : {})}>
@@ -182,6 +182,8 @@ function InviteScreen({ custom, animated = false }) {
             {[
               { label: 'Full name', value: 'Albert H. Eijn' },
               { label: 'Email address', value: 'ah@funnyemail.com' },
+              { label: 'Location', value: 'Amsterdam' },
+              { label: 'Availabitiy', value: 'Today!' },
             ].map((field) => (
               <div key={field.label}>
                 <div className="text-sm text-gray-500">{field.label}</div>
@@ -192,7 +194,7 @@ function InviteScreen({ custom, animated = false }) {
             ))}
           </div>
           <div className="mt-6 rounded-lg bg-red-500 py-2 px-3 text-center text-sm font-semibold text-white">
-            Sign up
+            Sign me up!
           </div>
         </div>
       </MotionAppScreenBody>
@@ -200,7 +202,7 @@ function InviteScreen({ custom, animated = false }) {
   )
 }
 
-function StocksScreen({ custom, animated = false }) {
+function PricesScreen({ custom, animated = false }) {
   return (
     <AppScreen className="w-full">
       <MotionAppScreenHeader {...(animated ? headerAnimation : {})}>
@@ -269,7 +271,7 @@ function StocksScreen({ custom, animated = false }) {
           ].map((stock) => (
             <div key={stock.name} className="flex items-center gap-4 px-4 py-3">
               <div
-                className="flex-none rounded-full"
+                className="flex-none"
                 style={{ backgroundColor: stock.color }}
               >
                 <stock.logo className="h-10 w-10" />
@@ -300,7 +302,7 @@ function StocksScreen({ custom, animated = false }) {
   )
 }
 
-function InvestScreen({ custom, animated = false }) {
+function DeliveryScreen({ custom, animated = false }) {
   return (
     <AppScreen className="w-full">
       <MotionAppScreenHeader {...(animated ? headerAnimation : {})}>
@@ -313,8 +315,8 @@ function InvestScreen({ custom, animated = false }) {
         <div className="px-4 py-6">
           <div className="space-y-4">
             {[
-              { label: 'Competitor 1', value: 'Average: €56,00' },
-              { label: 'Competitor 2', value: 'Average: €53,00' },
+              { label: 'Albert Heijn', value: 'Average: €66,00' },
+              { label: 'Jumbo', value: 'Average: €63,00' },
               {
                 label: 'Minimum delivery:',
                 value: (
@@ -332,7 +334,7 @@ function InvestScreen({ custom, animated = false }) {
                   </div>
                 ),
               },
-              { label: 'Picnic', value: 'Average: €47,00' },
+              { label: 'Picnic', value: 'Average: €57,00' },
               { label: 'Estimated saving', value: '28%' },
             ].map((item) => (
               <div
@@ -543,7 +545,7 @@ function FeaturesMobile() {
 export function PrimaryFeatures() {
   return (
     <section
-      id="teams"
+      id="app"
       aria-label="Features for investing all your money"
       className="bg-gray-900 py-20 sm:py-32"
     >
