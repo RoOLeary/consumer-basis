@@ -74,6 +74,7 @@ module.exports = {
       },
       maxWidth: {
         '2xl': '40rem',
+        '7xl': '70rem',
       },
     },
   },

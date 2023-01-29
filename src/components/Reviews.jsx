@@ -260,9 +260,9 @@ export function Reviews() {
       <Container>
         <h2
           id="reviews-title"
-          className="text-3xl font-medium tracking-tight text-gray-900 sm:text-center"
+          className="text-3xl font-black tracking-tight text-gray-900 sm:text-center"
         >
-          Consumer vacancies (or perhaps recipes)
+          Consumer vacancies (or perhaps recipes &#129300;)
         </h2>
         <p className="mt-2 text-lg text-gray-600 sm:text-center">
           Note; trying out this vertical style css scroller. Could be worth looking at for the comp in flight. 

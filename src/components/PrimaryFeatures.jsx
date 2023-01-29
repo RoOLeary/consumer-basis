@@ -204,64 +204,64 @@ function StocksScreen({ custom, animated = false }) {
   return (
     <AppScreen className="w-full">
       <MotionAppScreenHeader {...(animated ? headerAnimation : {})}>
-        <AppScreen.Title>Super Fresh...</AppScreen.Title>
+        <AppScreen.Title>This could be live pricings...</AppScreen.Title>
         <AppScreen.Subtitle>Jan 29, 2023</AppScreen.Subtitle>
       </MotionAppScreenHeader>
       <MotionAppScreenBody {...(animated ? { ...bodyAnimation, custom } : {})}>
         <div className="divide-y divide-gray-100">
           {[
             {
-              name: 'Laravel',
-              price: '4,098.01',
+              name: 'Kokommer',
+              price: '2.01',
               change: '+4.98%',
               color: '#F9322C',
               logo: LaravelLogo,
             },
             {
-              name: 'Filament',
-              price: '5,451.10',
+              name: 'Half Volle Melk',
+              price: '1.10',
               change: '-3.38%',
               color: '#5A67D8',
               logo: TupleLogo,
             },
             {
-              name: 'NextJS',
-              price: '4,098.41',
+              name: 'Potatoes',
+              price: '3,00',
               change: '+6.25%',
               color: '#2A5B94',
               logo: TransistorLogo,
             },
             {
-              name: 'Tailwind',
-              price: '250.65',
+              name: 'Cola',
+              price: '2.65',
               change: '+1.25%',
               color: '#3320A7',
               logo: DiageoLogo,
             },
             {
-              name: 'Style Components',
-              price: '250.65',
+              name: 'Washing up liquic',
+              price: '1.65',
               change: '-3.38%',
               color: '#2A3034',
               logo: StaticKitLogo,
             },
             {
-              name: 'Artisan',
-              price: '5,040.85',
+              name: 'Bread',
+              price: '2.85',
               change: '-3.11%',
               color: '#0EA5E9',
               logo: StatamicLogo,
             },
             {
-              name: 'Docker',
-              price: '140.44',
+              name: 'Chips',
+              price: '3.44',
               change: '+9.09%',
               color: '#16A34A',
               logo: MirageLogo,
             },
             {
-              name: 'Turbopack',
-              price: '550.60',
+              name: 'Cheese',
+              price: '5.60',
               change: '-1.25%',
               color: '#8D8D8D',
               logo: ReversableLogo,
@@ -279,7 +279,7 @@ function StocksScreen({ custom, animated = false }) {
               </div>
               <div className="flex-none text-right">
                 <div className="text-sm fonf$t-medium text-gray-900">
-                  {stock.price}
+                  €{stock.price}
                 </div>
                 <div
                   className={clsx(
@@ -313,13 +313,14 @@ function InvestScreen({ custom, animated = false }) {
         <div className="px-4 py-6">
           <div className="space-y-4">
             {[
-              { label: 'Number of shares', value: '100' },
+              { label: 'Competitor 1', value: 'Average: €56,00' },
+              { label: 'Competitor 2', value: 'Average: €53,00' },
               {
-                label: 'Current market price',
+                label: 'Minimum delivery:',
                 value: (
                   <div className="flex">
-                    €34.28
-                    <svg viewBox="0 0 24 24" fill="none" className="h-6 w-6">
+                    €35,00
+                    {/* <svg viewBox="0 0 24 24" fill="none" className="h-6 w-6">
                       <path
                         d="M17 15V7H9M17 7 7 17"
                         stroke="#f00"
@@ -327,11 +328,12 @@ function InvestScreen({ custom, animated = false }) {
                         strokeLinecap="round"
                         strokeLinejoin="round"
                       />
-                    </svg>
+                    </svg> */}
                   </div>
                 ),
               },
-              { label: 'Estimated cost', value: '€3,428.00' },
+              { label: 'Picnic', value: 'Average: €47,00' },
+              { label: 'Estimated saving', value: '28%' },
             ].map((item) => (
               <div
                 key={item.label}
@@ -344,7 +346,7 @@ function InvestScreen({ custom, animated = false }) {
               </div>
             ))}
             <div className="rounded-lg bg-red-500 py-2 px-3 text-center text-sm font-semibold text-white">
-              Buy Now
+              Download the app
             </div>
           </div>
         </div>
@@ -548,7 +550,9 @@ export function PrimaryFeatures() {
       <Container>
         <div className="mx-auto max-w-2xl lg:mx-0 lg:max-w-3xl">
           <h2 className="text-3xl font-black tracking-tight text-white">
-            Every product you need! Try it for yourself.
+            Every product you need! Try it for yourself.<br />
+            (Or Live pricing)<br />
+            (...or a sign up form)
           </h2>
           {/* <p className="mt-2 text-lg text-gray-400">
             Consumer was built to make grocery shopping and meals etc a heck of a lot easier

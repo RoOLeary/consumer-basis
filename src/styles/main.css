@@ -1,6 +1,7 @@
 
 @import './globals/fonts.css';
 @import './components/animations.css';
+@import './components/video.css';
 
 @tailwind base;
 @tailwind components;
