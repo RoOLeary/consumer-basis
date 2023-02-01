@@ -51,8 +51,8 @@ export function Header() {
       <nav>
         <Container className="relative z-50 flex justify-between py-8">
           <div className="relative z-10 flex items-center gap-16">
-            <Link href="/" aria-label="Home" className="flex title-font font-black items-center text-gray-900 md:mb-0 rounded shake"><img alt="Logo" srcSet="https://with-typescript-iota-self.vercel.app/assets/images/logo.svg 1x, https://with-typescript-iota-self.vercel.app/assets/images/logo.svg 2x" src="https://with-typescript-iota-self.vercel.app/assets/images/logo.svg" width="75" height="75" decoding="async" data-nimg="1" className="starting-logo dark-version default-logo shake rounded" loading="lazy" style={{ "color": "transparent", "borderRadius": "13px"}} />
-            </Link>
+            {/* <Link href="/" aria-label="Home" className="flex title-font font-black items-center text-gray-900 md:mb-0 rounded shake"><img alt="Logo" srcSet="https://with-typescript-iota-self.vercel.app/assets/images/logo.svg 1x, https://with-typescript-iota-self.vercel.app/assets/images/logo.svg 2x" src="https://with-typescript-iota-self.vercel.app/assets/images/logo.svg" width="75" height="75" decoding="async" data-nimg="1" className="starting-logo dark-version default-logo shake rounded" loading="lazy" style={{ "color": "transparent", "borderRadius": "13px"}} />
+            </Link> */}
             <div className="hidden lg:flex lg:gap-10">
               <NavLinks />
             </div>
