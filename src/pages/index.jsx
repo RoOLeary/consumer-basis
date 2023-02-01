@@ -33,7 +33,7 @@ export default function Home() {
         <Perks />
         <JoinUs />
       </main>
-      <Footer />
-    </>
+    <Footer />
+  </>
   )
 }
