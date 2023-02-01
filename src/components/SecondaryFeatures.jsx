@@ -6,49 +6,49 @@ const features = [
   {
     name: 'Commercial',
     description:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+      'Building the perfect assortment',
     icon: DeviceArrowIcon,
   },
   {
-    name: 'Headquarters',
+    name: 'Construction',
     description:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+      'Expanding into new aressd.',
     icon: DeviceCardsIcon,
   },
   {
-    name: 'Data Analysis',
+    name: 'Design',
     description:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+      'User experience and brand',
     icon: DeviceClockIcon,
   },
   {
-    name: 'Tech',
+    name: 'Customer Service',
     description:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+      'Going the extra mile for service',
     icon: DeviceListIcon,
   },
   {
-    name: 'Customer Success',
+    name: 'Facilities',
     description:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+      'Creating the best workplace`.',
     icon: DeviceLockIcon,
   },
   {
     name: 'Internships',
     description:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+      'Learn from the best.',
     icon: DeviceChartIcon,
   },
   {
     name: 'People',
     description:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+      'Hiring the A Team.',
     icon: DeviceLockIcon,
   },
   {
-    name: 'Finance',
+    name: 'Analytics',
     description:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+      'Drive the data to perfection.',
     icon: DeviceChartIcon,
   },
 ]
@@ -208,7 +208,7 @@ export function SecondaryFeatures() {
       <Container>
         <div className="sm:text-center">
           <h2 className="text-3xl font-black tracking-tight text-gray-900 text-left">
-            What is your next challenge?
+            Shortcut to HQ teams
           </h2>{/*
           <p className="mt-2 text-lg text-gray-600">
             With typical market returns, you have to start young to secure your

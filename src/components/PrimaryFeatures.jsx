@@ -283,7 +283,7 @@ function PricesScreen({ custom, animated = false }) {
                 <div className="text-sm fonf$t-medium text-gray-900">
                   €{product.price}
                 </div>
-                <div
+                {/* <div
                   className={clsx(
                     'text-xs leading-5',
                     product.difference.startsWith('+')
@@ -292,7 +292,7 @@ function PricesScreen({ custom, animated = false }) {
                   )}
                 >
                   {product.difference}
-                </div>
+                </div> */}
               </div>
             </div>
           ))}
@@ -552,8 +552,9 @@ export function PrimaryFeatures() {
       <Container>
         <div className="mx-auto max-w-2xl lg:mx-0 lg:max-w-3xl">
           <h2 className="text-3xl font-black tracking-tight text-white">
-            Every product you need! Try it for yourself.<br />
-            (Or Live pricing)<br />
+            Multiple comp output options here! 
+            Give it a spin.<br />
+            (Could also be ;ive pricing)<br />
             (...or a sign up form)
           </h2>
           {/* <p className="mt-2 text-lg text-gray-400">
