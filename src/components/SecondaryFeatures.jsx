@@ -1,5 +1,5 @@
 import { useId } from 'react'
-
+import Link from 'next/link'
 import { Container } from '@/components/Container'
 
 const features = [
@@ -234,8 +234,8 @@ export function SecondaryFeatures() {
           ))}
         </ul>
         <div className="mx-auto flex mt-8 justify-center">
-          <a className="inline-flex justify-center rounded-lg py-2 px-3 text-sm font-semibold outline-2 outline-offset-2 transition-colors bg-red-500 text-white hover:bg-red-600 active:bg-red-500 active:text-white/80 hidden lg:block bg-red-500 hover:bg-red-400 w-32
-    text-center" href="/#">All Jobs</a>
+          <Link className="inline-flex justify-center rounded-lg py-2 px-3 text-sm font-semibold outline-2 outline-offset-2 transition-colors bg-red-500 text-white hover:bg-red-600 active:bg-red-500 active:text-white/80 hidden lg:block bg-red-500 hover:bg-red-400 w-32
+    text-center" href="/#">All Jobs</Link>
         </div>
       </Container>
     </section>
