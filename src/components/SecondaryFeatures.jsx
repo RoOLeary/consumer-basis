@@ -226,7 +226,7 @@ export function SecondaryFeatures() {
               key={feature.name}
               className="rounded-2xl border border-gray-200 p-4 text-center"
             >
-              <h3 className="mt-2 font-semibold text-gray-900">
+              <h3 className="font-semibold text-gray-900">
                 {feature.name}
               </h3>
               <p className="text-gray-700">{feature.description}</p>
