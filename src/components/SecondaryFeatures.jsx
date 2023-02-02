@@ -201,30 +201,26 @@ function DeviceChartIcon(props) {
 export function SecondaryFeatures() {
   return (
     <section
-      id="secondary-features"
-      aria-label="Features for building a portfolio"
+      id="shortcut-to-hq"
+      aria-label="shortcut-to-hq"
       className="py-20 sm:py-32"
     >
       <Container>
         <div className="sm:text-center">
           <h2 className="text-3xl font-black tracking-tight text-gray-900 text-left">
             Shortcut to HQ teams
-          </h2>{/*
-          <p className="mt-2 text-lg text-gray-600">
-            With typical market returns, you have to start young to secure your
-            future. With Consumer, it’s never too late to build your nest egg.
-          </p> */}
+          </h2>
         </div>
         <ul
           role="list"
-          className="mx-auto mt-8 grid max-w-2xl grid-cols-1 gap-6 text-sm sm:mt-8 sm:grid-cols-2 md:gap-y-10 lg:max-w-none lg:grid-cols-4"
+          className="mx-auto mt-8 grid max-w-2xl grid-cols-1 gap-2 text-sm sm:mt-8 sm:grid-cols-2 md:gap-y-2 lg:max-w-none lg:grid-cols-4"
         >
 
 
           {features.map((feature) => (
             <li
               key={feature.name}
-              className="rounded-2xl border border-gray-200 p-4 text-center"
+              className="rounded-md border border-gray-200 p-4 text-center"
             >
               <h3 className="font-semibold text-gray-900">
                 {feature.name}

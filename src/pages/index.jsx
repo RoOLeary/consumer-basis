@@ -63,9 +63,8 @@ export default function Home() {
             <div role="dialog" aria-modal="true">
               <div focus="true" className="hidden inset-0 z-10 overflow-y-auto bg-white px-6 py-6 lg:hidden">
                 <div className="flex items-center justify-between">
-                  <Link href={'/'} className="-m-1.5 p-1.5">
-                    <span className="sr-only">Picnic</span>
-                    <img className="h-full shake" src="https://tailwindui.com/img/logos/mark.svg?color=red&shade=600" alt="" />
+                  <Link href={"/"} className="-m-1.5 p-1.5">
+                    <img className="h-full shake rounded-md" src="https://with-typescript-iota-self.vercel.app/assets/images/logo.svg" alt="" />
                   </Link>
                   <button type="button" className="-m-2.5 rounded-md p-2.5 text-gray-700">
                     <span className="sr-only">Close menu</span>
