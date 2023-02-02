@@ -105,7 +105,7 @@ export default function Home() {
                 <h1 className="text-4xl font-black tracking-tight text-gray-900 sm:text-6xl">Join the grocery revolution</h1>
                 {/* <p className="mt-6 text-lg leading-8 text-gray-600">Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo. Elit sunt amet fugiat veniam occaecat fugiat aliqua.</p> */}
                 <div className="mt-10 flex items-center justify-start gap-x-6">
-                  <Link href={"/jobs"} className="rounded-md bg-red-600 px-3.5 py-1.5 text-base font-semibold leading-7 text-white shadow-sm hover:bg-red-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red-600">All Jobs</Link>
+                  <Link href={"/#jobs"} className="rounded-md bg-red-600 px-3.5 py-1.5 text-base font-semibold leading-7 text-white shadow-sm hover:bg-red-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red-600">All Jobs</Link>
                 </div>
               </div>
             </div>
@@ -123,7 +123,7 @@ export default function Home() {
           </div>
         </main>
       </div>
-      <section className="relative bg-white pt-20">      
+      <section id="jobs" className="relative bg-white pt-20">      
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="sm:text-center"><h2 className="text-3xl font-black tracking-tight text-gray-900 text-left mb-8">What is your next Challenge?</h2></div>
             <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-2">
@@ -156,7 +156,7 @@ export default function Home() {
               <div className="flex-1 relative">
                 <div className="text-white text-base md:text-xl max-w-2xl leading-tight pb-12">
                   <h2 className="text-white font-black tracking-tightest text-3xl pb-4">About Picnic</h2>
-                  <p className="mt-3 text-lg text-white">Branding is the foundation of your business. A fantastic digital experience relies on the brand resonating perfectly with your target audience. We help businesses assert their position in their industry by providing a brand identity thats solid and memorable.</p>
+                  <p className="mt-3 text-lg text-white">Picnic is een Nederlandse online-supermarkt. Het bedrijf bezorgt uitsluitend aan huis en heeft geen eigen winkels. Het is actief in Nederland (sinds 2015), Duitsland (2018) en Frankrijk (2021)</p>
                 </div>
                 <span className="absolute top-0 left-0 w-4 h-full bg-white -ml-20"></span>
               </div>
