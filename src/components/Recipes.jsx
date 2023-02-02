@@ -250,7 +250,7 @@ function ReviewGrid() {
   )
 }
 
-export function Reviews() {
+export function Recipes() {
   return (
     <section
       id="careers"
