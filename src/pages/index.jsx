@@ -11,6 +11,7 @@ import { TextVisual } from '@/components/TextVisual'
 import { JobTestimonial } from '@/components/JobTestimonial'
 import { JoinUs } from '@/components/JoinUs'
 import { Video } from '@/components/Video'
+import { motion } from 'framer-motion';
 
 export default function Home() {
   return (
@@ -149,6 +150,7 @@ export default function Home() {
       
       <div className="bg-white pt-24 relative">
         <div className="relative mt-24 -mb-24 bg-red-600 px-12 py-24 flex items-center">
+            
             <div className="bottom-auto top-0 left-0 right-0 w-full absolute pointer-events-none overflow-hidden -mt-20" style={{ "height":"80px", "transform": "translateZ(0)"}}>
               <svg className="absolute bottom-0 overflow-hidden" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" version="1.1" viewBox="0 0 2560 100" x="0" y="0"><polygon className="fill-red-600" points="2560 0 2560 100 0 100"></polygon></svg>
             </div>
@@ -163,10 +165,13 @@ export default function Home() {
             </div>
             <br />
             <br />
-            <div className="w-full h-auto border-red bg-white flex justify-end">
+            <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            className="w-full h-auto border-red bg-white flex justify-end">
               <img src="/assets/images/Picnic-Amersfoort-1-1280x720-1.jpeg" className="relative block w-full h-50 object-cover -mt-12 aos-init aos-animate" />
               <div className="w-64 bg-red-600"></div>
-            </div>
+            </motion.div>
             </div>
 
     </main>
