@@ -203,7 +203,7 @@ export function SecondaryFeatures() {
     <section
       id="shortcut-to-hq"
       aria-label="shortcut-to-hq"
-      className="py-20 sm:py-32"
+      className="pt-20 sm:py-32 bg-white"
     >
       <Container>
         <div className="sm:text-center">

@@ -22,7 +22,7 @@ export default function Home() {
           content="By leveraging insights from our network of industry insiders, you’ll know exactly when to buy to maximize profit, and exactly when to sell to avoid painful losses."
         />
       </Head>
-      {/* <Header /> */}
+      
       <main>
 
       <div className="isolate bg-white">
@@ -123,18 +123,18 @@ export default function Home() {
           </div>
         </main>
       </div>
-      <section className="relative bg-white py-20">      
-        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div class="sm:text-center"><h2 class="text-3xl font-black tracking-tight text-gray-900 text-left mb-8">What is your next Challenge?</h2></div>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-2">
-              <div class="flex justify-center text-6xl p-6 bg-gray-100">[cat]</div>
-              <div class="flex justify-center text-6xl p-6 bg-gray-[cat]00">[cat]</div>
-              <div class="flex justify-center text-6xl p-6 bg-gray-100">[cat]</div>
-              <div class="flex justify-center text-6xl p-6 bg-gray-100">[cat]</div>
-              <div class="flex justify-center text-6xl p-6 bg-gray-100">[cat]</div>
-              <div class="flex justify-center text-6xl p-6 bg-gray-100">[cat]</div>
-              <div class="flex justify-center text-6xl p-6 bg-gray-100">[cat]</div>
-              <div class="flex justify-center text-6xl p-6 bg-gray-100">[cat]</div>
+      <section className="relative bg-white pt-20">      
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="sm:text-center"><h2 className="text-3xl font-black tracking-tight text-gray-900 text-left mb-8">What is your next Challenge?</h2></div>
+            <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-2">
+              <div className="flex justify-center text-6xl p-6 bg-gray-100">[cat]</div>
+              <div className="flex justify-center text-6xl p-6 bg-gray-100">[cat]</div>
+              <div className="flex justify-center text-6xl p-6 bg-gray-100">[cat]</div>
+              <div className="flex justify-center text-6xl p-6 bg-gray-100">[cat]</div>
+              <div className="flex justify-center text-6xl p-6 bg-gray-100">[cat]</div>
+              <div className="flex justify-center text-6xl p-6 bg-gray-100">[cat]</div>
+              <div className="flex justify-center text-6xl p-6 bg-gray-100">[cat]</div>
+              <div className="flex justify-center text-6xl p-6 bg-gray-100">[cat]</div>
             </div>
         </div>
       </section>
@@ -147,8 +147,27 @@ export default function Home() {
       {/* <Reviews /> */}
       <TextVisual />
       
-     
-      
+      <div className="bg-white pt-24 relative">
+        <div className="relative mt-24 -mb-24 bg-red-600 px-12 py-24 flex items-center">
+            <div className="bottom-auto top-0 left-0 right-0 w-full absolute pointer-events-none overflow-hidden -mt-20" style={{ "height":"80px", "transform": "translateZ(0)"}}>
+              <svg className="absolute bottom-0 overflow-hidden" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" version="1.1" viewBox="0 0 2560 100" x="0" y="0"><polygon className="fill-red-600" points="2560 0 2560 100 0 100"></polygon></svg>
+            </div>
+            <div className="hidden md:block w-3/12"></div>
+              <div className="flex-1 relative">
+                <div className="text-white text-base md:text-xl max-w-2xl leading-tight pb-12">
+                  <h2 className="text-white font-black tracking-tightest text-3xl pb-4">About Picnic</h2>
+                  <p className="mt-3 text-lg text-white">Branding is the foundation of your business. A fantastic digital experience relies on the brand resonating perfectly with your target audience. We help businesses assert their position in their industry by providing a brand identity thats solid and memorable.</p>
+                </div>
+                <span className="absolute top-0 left-0 w-4 h-full bg-white -ml-20"></span>
+              </div>
+            </div>
+            <br />
+            <br />
+            <div className="w-full h-auto border-red bg-white flex justify-end">
+              <img src="/assets/images/Picnic-Amersfoort-1-1280x720-1.jpeg" className="relative block w-full h-50 object-cover -mt-12 aos-init aos-animate" />
+              <div className="w-64 bg-red-600"></div>
+            </div>
+            </div>
 
     </main>
   <Footer />
