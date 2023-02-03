@@ -98,7 +98,7 @@ export default function Home() {
           <div className="overflow-hidden py-20 sm:py-32 lg:pb-32 xl:pb-36 relative md:px-6 lg:px-8" style={{ "backgroundImage": 'url("assets/images/hero-bg.png")', "backgroundSize": "cover", "height": "600px", "backgroundPosition": "center center",  "backgroundAttachment": "scroll" }}>
             <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
               <div className="hidden sm:mb-8 sm:flex sm:justify-start">
-                <div className="relative rounded-full py-1 px-3 text-sm leading-6 text-white ring-1 ring-white-900/10 hover:ring-white-900/20">
+                <div className="relative rounded-full py-1 px-3 text-sm leading-6 text-white ring-1 ring-white">
                   420 jobs in over 60 locations!
                 </div>
               </div>
