@@ -31,7 +31,7 @@ export default function Home() {
           <Link href="/" aria-label="Home" className="flex title-font font-black items-center text-gray-900 md:mb-0 rounded shake"><img alt="Logo" src="https://with-typescript-iota-self.vercel.app/assets/images/logo.svg" width="75" height="75" decoding="async" data-nimg="1" className="starting-logo dark-version default-logo shake rounded" loading="lazy" style={{ "color": "transparent", "borderRadius": "13px"}} />
           </Link>
         </div>
-        <div className="px-6 pt-6 lg:px-8">
+        <div className="px-6 pt-6 lg:px-8 absolute z-10 w-full">
           <nav className="flex items-center justify-between" aria-label="Global">
             <div className="flex lg:flex-1">
               <Link href={"/"} className="-m-1.5 p-1.5">
@@ -48,16 +48,16 @@ export default function Home() {
               </button>
             </div>
             <div className="hidden lg:flex lg:gap-x-12">
-              <a href="#" className="text-sm font-semibold leading-6 text-gray-900">Teams</a>
+              <a href="#" className="text-sm font-semibold leading-6 text-white">Teams</a>
 
-              <a href="#" className="text-sm font-semibold leading-6 text-gray-900">Careers</a>
+              <a href="#" className="text-sm font-semibold leading-6 text-white">Careers</a>
 
-              <a href="#" className="text-sm font-semibold leading-6 text-gray-900">Blog</a>
+              <a href="#" className="text-sm font-semibold leading-6 text-white">Blog</a>
 
-              <a href="#" className="text-sm font-semibold leading-6 text-gray-900">Contact</a>
+              <a href="#" className="text-sm font-semibold leading-6 text-white">Contact</a>
             </div>
             <div className="hidden lg:flex lg:flex-1 lg:justify-end">
-              <a href="#" className="text-sm font-semibold leading-6 text-gray-900">Log in <span aria-hidden="true">&rarr;</span></a>
+              <a href="#" className="text-sm font-semibold leading-6 text-white">Log in <span aria-hidden="true">&rarr;</span></a>
             </div>
           </nav>
           
@@ -78,13 +78,13 @@ export default function Home() {
               <div className="mt-6 flow-root">
                 <div className="-my-6 divide-y divide-gray-500/10">
                   <div className="space-y-2 py-6">
-                    <a href="#" className="-mx-3 block rounded-lg py-2 px-3 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-400/10">Teams</a>
+                    <a href="#" className="-mx-3 block rounded-lg py-2 px-3 text-base font-semibold leading-7 text-white hover:bg-gray-400/10">Teams</a>
 
-                    <a href="#" className="-mx-3 block rounded-lg py-2 px-3 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-400/10">Careers</a>
+                    <a href="#" className="-mx-3 block rounded-lg py-2 px-3 text-base font-semibold leading-7 text-white hover:bg-gray-400/10">Careers</a>
 
-                    <a href="#" className="-mx-3 block rounded-lg py-2 px-3 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-400/10">Blog</a>
+                    <a href="#" className="-mx-3 block rounded-lg py-2 px-3 text-base font-semibold leading-7 text-white hover:bg-gray-400/10">Blog</a>
 
-                    <a href="#" className="-mx-3 block rounded-lg py-2 px-3 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-400/10">Contact</a>
+                    <a href="#" className="-mx-3 block rounded-lg py-2 px-3 text-base font-semibold leading-7 text-white hover:bg-gray-400/10">Contact</a>
                   </div>
                   <div className="py-6">
                     <a href="#" className="-mx-3 block rounded-lg py-2.5 px-3 text-base font-semibold leading-6 text-gray-900 hover:bg-gray-400/10">Log in</a>
@@ -95,15 +95,15 @@ export default function Home() {
           </div>
         </div>
         <main>
-          <div className="overflow-hidden py-20 sm:py-32 lg:pb-32 xl:pb-36 relative md:px-6 lg:px-8">
+          <div className="overflow-hidden py-20 sm:py-32 lg:pb-32 xl:pb-36 relative md:px-6 lg:px-8" style={{ "backgroundImage": 'url("assets/images/hero-bg.png")', "backgroundSize": "cover", "height": "600px", "backgroundPosition": "center center",  "backgroundAttachment": "scroll" }}>
             <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
               <div className="hidden sm:mb-8 sm:flex sm:justify-start">
-                <div className="relative rounded-full py-1 px-3 text-sm leading-6 text-gray-600 ring-1 ring-gray-900/10 hover:ring-gray-900/20">
+                <div className="relative rounded-full py-1 px-3 text-sm leading-6 text-white ring-1 ring-white-900/10 hover:ring-white-900/20">
                   420 jobs in over 60 locations!
                 </div>
               </div>
               <div className="text-left">
-                <h1 className="text-4xl font-black tracking-tight text-gray-900 sm:text-6xl">Join the grocery revolution</h1>
+                <h1 className="text-4xl font-black tracking-tight text-white sm:text-6xl">Join the grocery revolution</h1>
                 {/* <p className="mt-6 text-lg leading-8 text-gray-600">Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo. Elit sunt amet fugiat veniam occaecat fugiat aliqua.</p> */}
                 <div className="mt-10 flex items-center justify-start gap-x-6">
                   <Link href={"/#jobs"} className="rounded-md bg-red-600 px-3.5 py-1.5 text-base font-semibold leading-7 text-white shadow-sm hover:bg-red-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red-600">All Jobs</Link>
