@@ -1,6 +1,6 @@
 export const Perks = () => {
     return(
-        <section className="bg-white pb-24">
+        <section className="bg-beige py-24 md:py-32 ">
           <div className="mx-auto">
             
             <div className="mx-auto max-w-6xl">
