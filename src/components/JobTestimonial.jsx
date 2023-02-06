@@ -9,7 +9,7 @@ export const JobTestimonial = () => {
                         <div aria-hidden="true" className="absolute inset-x-0 top-0 h-1/2 bg-white lg:hidden"></div>
                         <div className="mx-auto max-w-md px-6 sm:max-w-3xl lg:h-full lg:p-0">
                         <div className="<Image sm:aspect-w-16 sm:aspect-h-7 lg:aspect-none lg:h-full">
-                        <Image className="object-cover lg:h-full lg:w-full rounded-md" src="https://picnic.app/jobs/wp-content/uploads/sites/10/2022/08/cover-photo-min.jpg" alt="" width="500" height="500" />
+                        <Image className="object-cover lg:h-full lg:w-full rounded-md hidden md:visible" src="https://picnic.app/jobs/wp-content/uploads/sites/10/2022/08/cover-photo-min.jpg" alt="" width="500" height="500" />
                         </div>
                     </div>
                 </div>

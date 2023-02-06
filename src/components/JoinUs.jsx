@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import Image from 'next/image';
 
 export const JoinUs = () => {
@@ -37,7 +38,7 @@ export const JoinUs = () => {
                         <div className="relative mx-auto max-w-md space-y-6 py-12 px-6 sm:max-w-3xl sm:py-16 lg:col-span-6 lg:col-start-4 lg:max-w-none lg:p-0">
                             <h2 className="text-3xl font-bold tracking-tight text-white" id="join-heading">Join our team</h2>
                             <p className="text-lg text-white">Varius facilisi mauris sed sit. Non sed et duis dui leo, vulputate id malesuada non. Cras aliquet purus dui laoreet diam sed lacus, fames.</p>
-                            <a className="block w-full rounded-md border border-transparent bg-white py-3 px-5 text-center text-base font-medium text-red-500 shadow-md hover:bg-blue-gray-50 sm:inline-block sm:w-auto" href="/jobs">fillRuleopen positions</a>
+                            <Link className="block w-full rounded-md border border-transparent bg-white py-3 px-5 text-center text-base font-medium text-red-500 shadow-md hover:bg-blue-gray-50 sm:inline-block sm:w-auto" href="/jobs">All Open positions</Link>
                         </div>
                     </div>
                 </div>
