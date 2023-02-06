@@ -1,12 +1,9 @@
 export const Perks = () => {
     return(
-        <section className="bg-white py-24">
-          <div className="mx-auto max-w-7xl px-6 lg:px-8">
-            <div className="mx-auto max-w-2xl lg:mx-0">
-              <h2 className="text-3xl font-black tracking-tight text-gray-900 sm:text-4xl">The perks of working with us!</h2>
-              <p className="mt-6 text-lg leading-8 text-gray-600">Lorem ipsum dolor sit amet consect adipisicing elit. Possimus magnam voluptatum cupiditate veritatis in accusamus quisquam.</p>
-            </div>
-            <div className="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-none">
+        <section className="bg-white pb-24">
+          <div className="mx-auto">
+            
+            <div className="mx-auto max-w-6xl">
               <dl className="grid max-w-xl grid-cols-1 gap-x-8 gap-y-16 lg:max-w-none lg:grid-cols-3">
                 <div className="flex flex-col">
                   <dt className="text-base font-semibold leading-7 text-gray-900">
