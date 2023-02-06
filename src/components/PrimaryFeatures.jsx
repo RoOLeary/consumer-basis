@@ -459,14 +459,8 @@ export function PrimaryFeatures() {
       <Container>
         <div className="mx-auto max-w-2xl lg:mx-0 lg:max-w-3xl">
           <h2 className="text-3xl font-black tracking-tight text-white">
-            Multiple comp output options here! 
-            Give it a spin.<br />
-            (Could also be ;ive pricing)<br />
-            (...or a sign up form)
+           Phone - demo app or perhaps add a signup form. 
           </h2>
-          {/* <p className="mt-2 text-lg text-gray-400">
-            Consumer was built to make grocery shopping and meals etc a heck of a lot easier
-          </p> */}
         </div>
       </Container>
       <div className="mt-16 md:hidden">
