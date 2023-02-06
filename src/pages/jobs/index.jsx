@@ -590,8 +590,7 @@ export default function Jobs() {
               </div>
             </div>
       </section>
-    
-     
+      <PrimaryFeatures />
       <JobTestimonial />
       <Video /> 
       <TextVisual />
