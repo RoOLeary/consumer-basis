@@ -62,14 +62,13 @@ export default function Home() {
             <div className="hidden lg:flex lg:gap-x-12">
               <a href="#" className="text-sm font-semibold leading-6 text-white">Teams</a>
 
-              <a href="#" className="text-sm font-semibold leading-6 text-white">Careers</a>
+              <a href="#" className="text-sm font-semibold leading-6 text-white">Our Mission</a>
 
-              <a href="#" className="text-sm font-semibold leading-6 text-white">Blog</a>
+              <a href="#" className="text-sm font-semibold leading-6 text-white">Life at Picnic</a>
 
-              <a href="#" className="text-sm font-semibold leading-6 text-white">Contact</a>
             </div>
             <div className="hidden lg:flex lg:flex-1 lg:justify-end">
-              <a href="#" className="text-sm font-semibold leading-6 text-white">Log in <span aria-hidden="true">&rarr;</span></a>
+              <a href="#" className="text-sm font-semibold leading-6 text-white bg-red rounded-full p-2">All jobs</a>
             </div>
           </nav>
           
@@ -99,7 +98,7 @@ export default function Home() {
                     <a href="#" className="-mx-3 block rounded-lg py-2 px-3 text-base font-semibold leading-7 text-white hover:bg-gray-400/10">Contact</a>
                   </div>
                   <div className="py-6">
-                    <a href="#" className="-mx-3 block rounded-lg py-2.5 px-3 text-base font-semibold leading-6 text-gray-900 hover:bg-gray-400/10">Log in</a>
+                    <a href="#" className="-mx-3 block rounded-lg py-2.5 px-3 text-base font-semibold leading-6 text-gray-900 hover:bg-gray-400/10">height="60"</a>
                   </div>
                 </div>
               </div>
@@ -110,7 +109,7 @@ export default function Home() {
           <div className="overflow-hidden py-20 sm:py-32 lg:pb-32 xl:pb-36 relative md:px-6 lg:px-8" style={{ "backgroundImage": 'url("assets/images/hero-bg.png")', "backgroundSize": "cover", "height": "600px", "backgroundPosition": "center center",  "backgroundAttachment": "scroll" }}>
             <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
               <div className="hidden sm:mb-8 sm:flex sm:justify-start">
-                <div className="relative rounded-full py-1 px-3 text-sm leading-6 text-white ring-1 ring-white">
+                <div className="relative rounded-full py-1 px-3 text-sm leading-6 text-white">
                   420 jobs in over 60 locations!
                 </div>
               </div>

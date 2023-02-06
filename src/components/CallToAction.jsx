@@ -45,7 +45,7 @@ export function CallToAction() {
                 <a href="#" className="text-sm font-semibold leading-6 text-white">Company</a>
               </div>
               <div className="hidden lg:flex lg:flex-1 lg:justify-end">
-                <a href="#" className="text-sm font-semibold leading-6 text-white">Log in <span aria-hidden="true">&rarr;</span></a>
+                <a href="#" className="text-sm font-semibold leading-6 text-white">Log in</a>
               </div>
             </nav>
             <div role="dialog" aria-modal="true">
@@ -81,8 +81,8 @@ export function CallToAction() {
             </div>
             <div className="mx-auto max-w-2xl py-32 sm:py-48 lg:py-56">
               <div className="hidden sm:mb-8 sm:flex sm:justify-center">
-                <div className="relative rounded-full py-1 px-3 text-sm leading-6 text-gray-400 ring-1 ring-white/10 hover:ring-white/20">
-                  Announcing our next round of funding. <a href="#" className="font-semibold text-white"><span className="absolute inset-0" aria-hidden="true"></span>Read more <span aria-hidden="true">&rarr;</span></a>
+                <div className="relative rounded-full py-1 px-3 text-sm leading-6 text-gray-400 ">
+                  Announcing our next round of funding. <a href="#" className="font-semibold text-white"><span className="absolute inset-0" aria-hidden="true"></span>Read more</a>
                 </div>
               </div>
               <div className="text-center">
@@ -90,7 +90,7 @@ export function CallToAction() {
                 <p className="mt-6 text-lg leading-8 text-gray-300">Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo. Elit sunt amet fugiat veniam occaecat fugiat aliqua.</p>
                 <div className="mt-10 flex items-center justify-center gap-x-6">
                   <a href="#" className="rounded-md bg-indigo-500 px-3.5 py-1.5 text-base font-semibold leading-7 text-white shadow-sm hover:bg-indigo-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-400">Get started</a>
-                  <a href="#" className="text-base font-semibold leading-7 text-white">Learn more <span aria-hidden="true">→</span></a>
+                  <a href="#" className="text-base font-semibold leading-7 text-white">Learn more </a>
                 </div>
               </div>
             </div>
