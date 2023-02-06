@@ -163,9 +163,8 @@ export default function Home() {
       <JobTestimonial />
       <Video /> 
      
-      {/* <Reviews /> */}
       <TextVisual />
-      <PrimaryFeatures />
+      {/* <PrimaryFeatures /> */}
       
       <div className="bg-white pt-24 relative">
         <div className="relative mt-24 -mb-24 bg-red-600 px-12 py-24 flex items-center">
