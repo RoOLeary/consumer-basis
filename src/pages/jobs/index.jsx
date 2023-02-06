@@ -149,41 +149,18 @@ export default function Jobs() {
                     </div>
                   </div>
 
-                  <section aria-labelledby="products-heading" className="pt-6 pb-24">
-                    <h2 id="products-heading" className="sr-only">Products</h2>
-
+                  <section className="pt-6 pb-24">
+                    
                     <div className="grid grid-cols-1 gap-x-8 gap-y-10 lg:grid-cols-4">
                       
                       <form className="hidden lg:block">
-                        {/* <h3 className="sr-only">Categories</h3>
-                        <ul role="list" className="space-y-4 border-b border-gray-200 pb-6 text-sm font-medium text-gray-900">
-                          <li>
-                            <a href="#">Operators</a>
-                          </li>
-
-                          <li>
-                            <a href="#">Runners</a>
-                          </li>
-
-                          <li>
-                            <a href="#">Shoppers</a>
-                          </li>
-
-                          <li>
-                            <a href="#">Drivers</a>
-                          </li>
-
-                          <li>
-                            <a href="#">Headquarters</a>
-                          </li>
-                        </ul> */}
-
+                      
                         <div className="border-b border-gray-200 py-6">
 
                           <h3 className="-my-3 flow-root mb-4">
                             <span className="font-medium text-gray-900">Filter</span>
                           </h3>
-                          <div class="col-span-6 sm:col-span-3">
+                          <div className="col-span-6 sm:col-span-3">
                             <input type="text" name="search-term" id="search-term" className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-red-500 focus:ring-red-500 sm:text-sm" placeholder="Wat wil je doen?" />
                           </div>
                         </div>
@@ -194,16 +171,6 @@ export default function Jobs() {
                           
                             <button type="button" className="flex w-full items-center justify-between bg-white py-3 text-sm text-gray-400 hover:text-gray-500" aria-controls="filter-section-0" aria-expanded="false">
                               <span className="font-medium text-gray-900">Availabilty</span>
-                              <span className="ml-6 flex items-center">
-                                
-                                <svg className="h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                                  <path d="M10.75 4.75a.75.75 0 00-1.5 0v4.5h-4.5a.75.75 0 000 1.5h4.5v4.5a.75.75 0 001.5 0v-4.5h4.5a.75.75 0 000-1.5h-4.5v-4.5z" />
-                                </svg>
-                                
-                                <svg className="h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                                  <path fillRule="evenodd" d="M4 10a.75.75 0 01.75-.75h10.5a.75.75 0 010 1.5H4.75A.75.75 0 014 10z" clipRule="evenodd" />
-                                </svg>
-                              </span>
                             </button>
                           </h3>
                         
@@ -239,23 +206,13 @@ export default function Jobs() {
                           
                             <button type="button" className="flex w-full items-center justify-between bg-white py-3 text-sm text-gray-400 hover:text-gray-500" aria-controls="filter-section-1" aria-expanded="false">
                               <span className="font-medium text-gray-900">Location</span>
-                              <span className="ml-6 flex items-center">
-                                
-                                <svg className="h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                                  <path d="M10.75 4.75a.75.75 0 00-1.5 0v4.5h-4.5a.75.75 0 000 1.5h4.5v4.5a.75.75 0 001.5 0v-4.5h4.5a.75.75 0 000-1.5h-4.5v-4.5z" />
-                                </svg>
-                                
-                                <svg className="h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                                  <path fillRule="evenodd" d="M4 10a.75.75 0 01.75-.75h10.5a.75.75 0 010 1.5H4.75A.75.75 0 014 10z" clipRule="evenodd" />
-                                </svg>
-                              </span>
                             </button>
                           </h3>
                         
                           <div className="pt-6" id="filter-section-1">
                             <div className="space-y-4">
                               <div className="flex items-center">
-                                <input id="filter-category-0" name="category[]" value="new-arrivals" type="checkbox" className="h-4 w-4 rounded border-gray-300 text-red-600 focus:ring-red-500" />
+                                <input id="filter-category-0" name="category[]" value="new-arrivals" type="checkbox" defaultChecked className="h-4 w-4 rounded border-gray-300 text-red-600 focus:ring-red-500" />
                                 <label htmlFor="filter-category-0" className="ml-3 text-sm text-gray-600">The Netherlands</label>
                               </div>
 
@@ -265,7 +222,7 @@ export default function Jobs() {
                               </div>
 
                               <div className="flex items-center">
-                                <input id="filter-category-2" name="category[]" value="travel" type="checkbox" defaultChecked className="h-4 w-4 rounded border-gray-300 text-red-600 focus:ring-red-500" />
+                                <input id="filter-category-2" name="category[]" value="travel" type="checkbox" className="h-4 w-4 rounded border-gray-300 text-red-600 focus:ring-red-500" />
                                 <label htmlFor="filter-category-2" className="ml-3 text-sm text-gray-600">Germany</label>
                               </div>
 
