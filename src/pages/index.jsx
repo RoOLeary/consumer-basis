@@ -23,7 +23,7 @@ export default function Home() {
 
   const router = useRouter(); 
   const control = useAnimation()
-  const [ref, inView] = useInView({ triggerOnce: false });
+  const [ref, inView] = useInView({ triggerOnce: false});
 
 
   return (
@@ -47,7 +47,7 @@ export default function Home() {
           <nav className="flex items-center justify-between" aria-label="Global">
             <div className="flex lg:flex-1">
               <Link href={"/"} className="-m-1.5 p-1.5">
-                <img className="h-full shake rounded-md" src="https://with-typescript-iota-self.vercel.app/assets/images/logo.svg" alt="" />
+                <Image alt="Logo" src="/assets/images/logo.svg" width="60" height="60" decoding="async" data-nimg="1" className="starting-logo dark-version default-logo shake rounded" loading="lazy" style={{ "color": "transparent", "borderRadius": "13px"}} />
               </Link>
             </div>
             <div className="flex hidden">
