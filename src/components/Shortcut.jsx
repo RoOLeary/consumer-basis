@@ -220,10 +220,10 @@ export function ShortCut() {
           {teams.map((team) => (
             <li
               key={team.name}
-              className="rounded-md border border-gray-200 p-4 text-center"
+              className="rounded-md border border-gray-200 p-4 text-center shadow"
             >
               <Link href={`team/${team.name}`}>
-              <h3 className="font-semibold text-gray-900">
+              <h3 className="font-bold text-gray-900">
                 {team.name}
               </h3>
               <p className="text-gray-700">{team.description}</p>
@@ -232,8 +232,13 @@ export function ShortCut() {
           ))}
         </ul>
         <div className="mx-auto flex mt-8 justify-center">
-          <Link className="inline-flex justify-center rounded-lg py-2 px-3 text-sm font-semibold outline-2 outline-offset-2 transition-colors bg-red-500 text-white hover:bg-red-600 active:bg-red-500 active:text-white/80 hidden lg:block bg-red-500 hover:bg-red-400 w-32
-    text-center" href="/jobs">All Jobs</Link>
+          <Link className="justify-center rounded-lg py-2 px-3 text-sm font-semibold outline-2 outline-offset-2 transition-colors bg-black text-white hover:bg-gray-600 active:bg-gray-500 active:text-white/80 hidden lg:block bg-gray-500 hover:bg-gray-400 w-32
+            text-center" href="/jobs"><span>All Jobs</span>
+            {/* <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 36 36" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+            </svg> */}
+          
+          </Link>
         </div>
       </Container>
     </section>
