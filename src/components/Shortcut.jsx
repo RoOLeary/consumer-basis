@@ -213,7 +213,7 @@ export function ShortCut() {
         </div>
         <ul
           role="list"
-          className="mx-auto mt-8 grid max-w-2xl grid-cols-2 gap-2 text-sm sm:mt-8 sm:grid-cols-2 md:gap-y-2 lg:max-w-none lg:grid-cols-4"
+          className="mx-auto mt-8 grid max-w-7xl grid-cols-2 gap-2 text-sm sm:mt-8 sm:grid-cols-2 md:gap-y-2 lg:max-w-none lg:grid-cols-4"
         >
 
 

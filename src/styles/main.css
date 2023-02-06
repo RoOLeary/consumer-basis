@@ -52,5 +52,9 @@
 }
 
 .bg-beige{
-  background-color: beige;
+  background-color: #F8F5F2;
+}
+
+.p-16{
+  padding: 4em;
 }
