@@ -155,7 +155,7 @@ export default function Jobs() {
                     <div className="grid grid-cols-1 gap-x-8 gap-y-10 lg:grid-cols-4">
                       
                       <form className="hidden lg:block">
-                        <h3 className="sr-only">Categories</h3>
+                        {/* <h3 className="sr-only">Categories</h3>
                         <ul role="list" className="space-y-4 border-b border-gray-200 pb-6 text-sm font-medium text-gray-900">
                           <li>
                             <a href="#">Operators</a>
@@ -176,9 +176,20 @@ export default function Jobs() {
                           <li>
                             <a href="#">Headquarters</a>
                           </li>
-                        </ul>
+                        </ul> */}
 
                         <div className="border-b border-gray-200 py-6">
+
+                          <h3 className="-my-3 flow-root mb-4">
+                            <span className="font-medium text-gray-900">Filter</span>
+                          </h3>
+                          <div class="col-span-6 sm:col-span-3">
+                            <input type="text" name="search-term" id="search-term" className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-red-500 focus:ring-red-500 sm:text-sm" placeholder="Wat wil je doen?" />
+                          </div>
+                        </div>
+                        <div className="border-b border-gray-200 py-6">
+
+                      
                           <h3 className="-my-3 flow-root">
                           
                             <button type="button" className="flex w-full items-center justify-between bg-white py-3 text-sm text-gray-400 hover:text-gray-500" aria-controls="filter-section-0" aria-expanded="false">
