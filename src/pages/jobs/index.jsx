@@ -179,8 +179,10 @@ export default function Jobs() {
                           <h3 className="-my-3 flow-root mb-4">
                             <span className="font-medium text-gray-900">Filter</span>
                           </h3>
-                          <div className="col-span-6 sm:col-span-3">
+                          <div className="col-span-6 sm:col-span-3 flex">
+                            
                             <input onChange={handleChange} type="text" name="search-term" id="search-term" className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-red-500 focus:ring-red-500 sm:text-sm" placeholder="Wat wil je doen?" />
+                            
                           </div>
                         </div>
                        
@@ -590,8 +592,8 @@ export default function Jobs() {
             </div>
       </section>
       
-      <JobTestimonial />
-      <Video /> 
+      {/* <JobTestimonial />
+      <Video />  */}
       <TextVisual />
       <JoinUs />
     <Footer />

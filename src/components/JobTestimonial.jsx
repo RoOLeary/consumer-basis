@@ -2,13 +2,13 @@ import Image from 'next/image';
 
 export const JobTestimonial = () => {
     return(
-        <section id="perks" className="bg-white pt-16 lg:py-24">
+        <section id="perks" className="relative bg-white pt-16 lg:py-24 hidden md:block">
             <div className="bg-red-600 pb-16 lg:relative lg:z-10 lg:pb-0">
                 <div className="lg:mx-auto lg:grid lg:max-w-7xl lg:grid-cols-3 lg:gap-8 lg:px-8">
                     <div className="relative lg:-my-8">
                         <div aria-hidden="true" className="absolute inset-x-0 top-0 h-1/2 bg-white lg:hidden"></div>
                         <div className="mx-auto max-w-md px-6 sm:max-w-3xl lg:h-full lg:p-0">
-                        <div className="<Image sm:aspect-w-16 sm:aspect-h-7 lg:aspect-none lg:h-full">
+                        <div className="sm:aspect-w-16 sm:aspect-h-7 lg:aspect-none lg:h-full">
                         <Image className="object-cover lg:h-full lg:w-full rounded-md" src="https://picnic.app/jobs/wp-content/uploads/sites/10/2022/08/cover-photo-min.jpg" alt="" width="500" height="500" />
                         </div>
                     </div>
