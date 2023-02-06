@@ -1,3 +1,5 @@
+import Image from 'next/image';
+
 export const JoinUs = () => {
 
     return(
@@ -9,7 +11,7 @@ export const JoinUs = () => {
                         <div className="absolute inset-x-0 h-1/2 bg-blue-gray-50 lg:hidden" aria-hidden="true"></div>
                         <div className="mx-auto max-w-md px-6 sm:max-w-3xl lg:max-w-none lg:p-0">
                             <div className="aspect-w-10 aspect-h-6 sm:aspect-w-2 sm:aspect-h-1 lg:aspect-w-1">
-                                <img className="rounded-3xl object-cover object-center shadow-2xl" src="https://picnic.app/jobs/wp-content/uploads/sites/10/2022/08/cover-photo-min.jpg" alt="" />
+                                <Image className="rounded-3xl object-cover object-center shadow-2xl" src="https://picnic.app/jobs/wp-content/uploads/sites/10/2022/08/cover-photo-min.jpg" alt="" width="500" height="500" />
                             </div>
                         </div>
                     </div>
@@ -35,7 +37,7 @@ export const JoinUs = () => {
                         <div className="relative mx-auto max-w-md space-y-6 py-12 px-6 sm:max-w-3xl sm:py-16 lg:col-span-6 lg:col-start-4 lg:max-w-none lg:p-0">
                             <h2 className="text-3xl font-bold tracking-tight text-white" id="join-heading">Join our team</h2>
                             <p className="text-lg text-white">Varius facilisi mauris sed sit. Non sed et duis dui leo, vulputate id malesuada non. Cras aliquet purus dui laoreet diam sed lacus, fames.</p>
-                            <a className="block w-full rounded-md border border-transparent bg-white py-3 px-5 text-center text-base font-medium text-red-500 shadow-md hover:bg-blue-gray-50 sm:inline-block sm:w-auto" href="#">Explore open positions</a>
+                            <a className="block w-full rounded-md border border-transparent bg-white py-3 px-5 text-center text-base font-medium text-red-500 shadow-md hover:bg-blue-gray-50 sm:inline-block sm:w-auto" href="/jobs">fillRuleopen positions</a>
                         </div>
                     </div>
                 </div>

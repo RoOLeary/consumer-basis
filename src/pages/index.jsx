@@ -40,7 +40,7 @@ export default function Home() {
 
       <div className="isolate bg-white">
         <div className="absolute inset-x-0 top-[-10rem] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[-20rem]">
-          <Link href="/" aria-label="Home" className="flex title-font font-black items-center text-gray-900 md:mb-0 rounded shake"><img alt="Logo" src="https://with-typescript-iota-self.vercel.app/assets/images/logo.svg" width="75" height="75" decoding="async" data-nimg="1" className="starting-logo dark-version default-logo shake rounded" loading="lazy" style={{ "color": "transparent", "borderRadius": "13px"}} />
+          <Link href="/" aria-label="Home" className="flex title-font font-black items-center text-gray-900 md:mb-0 rounded shake"><Image alt="Logo" src="/assets/images/logo.svg" width="60" height="60" decoding="async" data-nimg="1" className="starting-logo dark-version default-logo shake rounded" loading="lazy" style={{ "color": "transparent", "borderRadius": "13px"}} />
           </Link>
         </div>
         <div className="px-6 pt-6 lg:px-8 absolute z-10 w-full">
@@ -77,7 +77,7 @@ export default function Home() {
             <div focus="true" className="hidden inset-0 z-10 overflow-y-auto bg-white px-6 py-6 lg:hidden">
               <div className="flex items-center justify-between">
                 <Link href={"/"} className="-m-1.5 p-1.5">
-                  <img className="h-full shake rounded-md" src="https://with-typescript-iota-self.vercel.app/assets/images/logo.svg" alt="" />
+                  <Image className="h-full shake rounded-md" width="60" height="60" src="/assets/images/logo.svg" alt="" />
                 </Link>
                 <button type="button" className="-m-2.5 rounded-md p-2.5 text-gray-700">
                   <span className="sr-only">Close menu</span>
@@ -192,7 +192,7 @@ export default function Home() {
                 ref={ref}
                 className={'bg-red'}
               >
-            <img src="/assets/images/Picnic-Amersfoort-1-1280x720-1.jpeg" className="relative block w-10/12 h-25 object-contain -mt-12 bg-red" />
+            <img src="/assets/images/Picnic-Amersfoort-1-1280x720-1.jpeg" className="relative block w-10/12 h-25 object-contain -mt-12 bg-red" width="1200" height="450" />
             </div>
             <div className="w-64 bg-red-600"></div>
           </div>

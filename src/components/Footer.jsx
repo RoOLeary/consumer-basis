@@ -27,7 +27,7 @@ export function Footer() {
         <div className="footerInner">
           <div>
             <div className="flex items-center text-gray-900">
-            <img className="h-full shake rounded-md" src="https://with-typescript-iota-self.vercel.app/assets/images/logo.svg" alt="" />
+            <Image className="h-full shake rounded-md" src="/assets/images/logo.svg" width="60" height="60" alt="" />
               <div className="ml-4">
                 <p className="text-base font-semibold">Picnic Recruitment</p>
                 <p className="mt-1 text-sm">Altijd de laagste prisjes.</p>

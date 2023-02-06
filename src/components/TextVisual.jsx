@@ -1,10 +1,10 @@
-
+import Image from 'next/image';
 
 export const TextVisual = () => {
     return(
         <section id="textVisual" className="relative bg-red">
           <div className="tvVisualContainer">
-            <img className="h-full w-full object-cover" src="https://picnic.app/jobs/wp-content/uploads/sites/10/2022/08/cover-photo-min.jpg" alt="" />
+            <Image className="h-full w-full object-cover" src="https://picnic.app/jobs/wp-content/uploads/sites/10/2022/08/cover-photo-min.jpg" width="500" height="500" alt="" />
             <div aria-hidden="true" className="absolute inset-0 bg-gradient-to-r from-white to-red-300 mix-blend-multiply"></div>
           </div>
           <div className="tvTextContainer">

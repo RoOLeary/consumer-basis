@@ -1,3 +1,5 @@
+import Image from 'next/image';
+
 export const JobTestimonial = () => {
     return(
         <section id="perks" className="bg-white pt-16 lg:py-24">
@@ -6,8 +8,8 @@ export const JobTestimonial = () => {
                     <div className="relative lg:-my-8">
                         <div aria-hidden="true" className="absolute inset-x-0 top-0 h-1/2 bg-white lg:hidden"></div>
                         <div className="mx-auto max-w-md px-6 sm:max-w-3xl lg:h-full lg:p-0">
-                        <div className="aspect-w-10 aspect-h-6 overflow-hidden rounded-xl shadow-xl sm:aspect-w-16 sm:aspect-h-7 lg:aspect-none lg:h-full">
-                        <img className="object-cover lg:h-full lg:w-full" src="https://picnic.app/jobs/wp-content/uploads/sites/10/2022/08/cover-photo-min.jpg" alt="" />
+                        <div className="<Image sm:aspect-w-16 sm:aspect-h-7 lg:aspect-none lg:h-full">
+                        <Image className="object-cover lg:h-full lg:w-full rounded-md" src="https://picnic.app/jobs/wp-content/uploads/sites/10/2022/08/cover-photo-min.jpg" alt="" width="500" height="500" />
                         </div>
                     </div>
                 </div>
