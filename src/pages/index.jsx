@@ -1,23 +1,35 @@
 import Head from 'next/head'
 import Link from 'next/link'
+import Image from 'next/image'
+import { useRouter } from 'next/router'
 import { Footer } from '@/components/Footer'
 import { Header } from '@/components/Header'
 import { Hero } from '@/components/Hero'
 import { PrimaryFeatures } from '@/components/PrimaryFeatures'
 import { Perks } from '@/components/Perks'
 import { Recipes } from '@/components/Recipes'
-import { SecondaryFeatures } from '@/components/SecondaryFeatures'
+import { ShortCut } from '@/components/Shortcut'
 import { TextVisual } from '@/components/TextVisual'
 import { JobTestimonial } from '@/components/JobTestimonial'
 import { JoinUs } from '@/components/JoinUs'
 import { Video } from '@/components/Video'
-import { motion } from 'framer-motion';
+import { motion, useAnimation } from 'framer-motion';
+import { useInView } from "react-intersection-observer";
+import { useEffect } from "react";
+
+import { jobs } from '../lib/utils';
 
 export default function Home() {
+
+  const router = useRouter(); 
+  const control = useAnimation()
+  const [ref, inView] = useInView({ triggerOnce: false });
+
+
   return (
     <>
       <Head>
-        <title>Consumer - Consumer Site Prototype.</title>
+        <title>Recruitment Site Prototype.</title>
         <meta
           name="description"
           content="By leveraging insights from our network of industry insiders, you’ll know exactly when to buy to maximize profit, and exactly when to sell to avoid painful losses."
@@ -106,7 +118,7 @@ export default function Home() {
                 <h1 className="text-4xl font-black tracking-tight text-white sm:text-6xl">Join the grocery revolution</h1>
                 {/* <p className="mt-6 text-lg leading-8 text-gray-600">Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo. Elit sunt amet fugiat veniam occaecat fugiat aliqua.</p> */}
                 <div className="mt-10 flex items-center justify-start gap-x-6">
-                  <Link href={"/#jobs"} className="rounded-md bg-red-600 px-3.5 py-1.5 text-base font-semibold leading-7 text-white shadow-sm hover:bg-red-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red-600">All Jobs</Link>
+                  <Link href={"/jobs"} className="rounded-md bg-red-600 px-3.5 py-1.5 text-base font-semibold leading-7 text-white shadow-sm hover:bg-red-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red-600">All Jobs</Link>
                 </div>
               </div>
             </div>
@@ -128,18 +140,24 @@ export default function Home() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="sm:text-center"><h2 className="text-3xl font-black tracking-tight text-gray-900 text-left mb-8">What is your next Challenge?</h2></div>
             <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-2">
-              <div className="flex justify-center text-6xl p-6 bg-gray-100">[cat]</div>
-              <div className="flex justify-center text-6xl p-6 bg-gray-100">[cat]</div>
-              <div className="flex justify-center text-6xl p-6 bg-gray-100">[cat]</div>
-              <div className="flex justify-center text-6xl p-6 bg-gray-100">[cat]</div>
-              <div className="flex justify-center text-6xl p-6 bg-gray-100">[cat]</div>
-              <div className="flex justify-center text-6xl p-6 bg-gray-100">[cat]</div>
-              <div className="flex justify-center text-6xl p-6 bg-gray-100">[cat]</div>
-              <div className="flex justify-center text-6xl p-6 bg-gray-100">[cat]</div>
+            {jobs ? jobs.map((job, id) => (
+
+              <div key={job.id} className="flex justify-center text-6xlbg-gray-100">
+                <Link className="block relative md:h-48 overflow-hidden rounded" href={`${router.asPath}berlin`}>
+                  <Image width={640} height={415} alt="ecommerce" className="object-cover object-center w-full h-full block" src={job.jobImage} />
+                  <div className="mt-4 absolute top-0 right-0 left-0 bottom-0">
+                    <h3 className="text-gray-500 text-xs tracking-widest title-font mb-1 absolute bg-white p-2 rounded" style={{ "top": "50%", "right": "50%", 
+                      "transform": "translate(50%,-50%)"}}>{job.title}</h3>
+                  </div>
+                </Link>
+              </div>
+              )
+              ) : ''}
+              
             </div>
         </div>
       </section>
-      <SecondaryFeatures />
+      <ShortCut />
       <Perks />
       <JoinUs />
       <JobTestimonial />
@@ -147,6 +165,7 @@ export default function Home() {
      
       {/* <Reviews /> */}
       <TextVisual />
+      <PrimaryFeatures />
       
       <div className="bg-white pt-24 relative">
         <div className="relative mt-24 -mb-24 bg-red-600 px-12 py-24 flex items-center">
@@ -165,15 +184,18 @@ export default function Home() {
             </div>
             <br />
             <br />
-            <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            className="w-full h-auto border-red bg-white flex justify-end">
-              <img src="/assets/images/Picnic-Amersfoort-1-1280x720-1.jpeg" className="relative block w-full h-50 object-cover -mt-12 aos-init aos-animate" />
-              <div className="w-64 bg-red-600"></div>
-            </motion.div>
+            <div 
+              style={{ 
+                transform: inView ? "none" : "translateY(200px)",
+                opacity: inView ? 1 : 0,
+                transition: "all 0.25s ease-out 0.25s"}} 
+                ref={ref}
+                className={'bg-red'}
+              >
+            <img src="/assets/images/Picnic-Amersfoort-1-1280x720-1.jpeg" className="relative block w-10/12 h-25 object-contain -mt-12 bg-red" />
             </div>
-
+            <div className="w-64 bg-red-600"></div>
+          </div>
     </main>
   <Footer />
 </>

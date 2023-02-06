@@ -1,0 +1,12 @@
+.footerContainer{
+    @apply border-t border-gray-200;
+}
+
+.footerInner{
+    @apply flex; 
+    @apply flex-col items-start justify-between gap-y-12 pt-16 pb-6 lg:flex-row lg:items-center lg:py-16;
+}
+
+.footerLogoAndInfo{
+    @apply flex items-center text-gray-900;
+}

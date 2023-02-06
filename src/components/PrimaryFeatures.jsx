@@ -8,16 +8,7 @@ import { AppScreen } from '@/components/AppScreen'
 import { CircleBackground } from '@/components/CircleBackground'
 import { Container } from '@/components/Container'
 import { PhoneFrame } from '@/components/PhoneFrame'
-import {
-  DiageoLogo,
-  LaravelLogo,
-  MirageLogo,
-  ReversableLogo,
-  StatamicLogo,
-  StaticKitLogo,
-  TransistorLogo,
-  TupleLogo,
-} from '@/components/StockLogos'
+
 
 const MotionAppScreenHeader = motion(AppScreen.Header)
 const MotionAppScreenBody = motion(AppScreen.Body)
@@ -211,91 +202,7 @@ function PricesScreen({ custom, animated = false }) {
       </MotionAppScreenHeader>
       <MotionAppScreenBody {...(animated ? { ...bodyAnimation, custom } : {})}>
         <div className="divide-y divide-gray-100">
-          {[
-            {
-              name: 'Kokommer',
-              price: '2.01',
-              difference: '+4.98%',
-              color: '#F9322C',
-              logo: LaravelLogo,
-            },
-            {
-              name: 'Half Volle Melk',
-              price: '1.10',
-              difference: '-3.38%',
-              color: '#5A67D8',
-              logo: TupleLogo,
-            },
-            {
-              name: 'Potatoes',
-              price: '3,00',
-              difference: '+6.25%',
-              color: '#2A5B94',
-              logo: TransistorLogo,
-            },
-            {
-              name: 'Cola',
-              price: '2.65',
-              difference: '+1.25%',
-              color: '#3320A7',
-              logo: DiageoLogo,
-            },
-            {
-              name: 'Washing up liquic',
-              price: '1.65',
-              difference: '-3.38%',
-              color: '#2A3034',
-              logo: StaticKitLogo,
-            },
-            {
-              name: 'Bread',
-              price: '2.85',
-              difference: '-3.11%',
-              color: '#0EA5E9',
-              logo: StatamicLogo,
-            },
-            {
-              name: 'Chips',
-              price: '3.44',
-              difference: '+9.09%',
-              color: '#16A34A',
-              logo: MirageLogo,
-            },
-            {
-              name: 'Cheese',
-              price: '5.60',
-              difference: '-1.25%',
-              color: '#8D8D8D',
-              logo: ReversableLogo,
-            },
-          ].map((product) => (
-            <div key={product.name} className="flex items-center gap-4 px-4 py-3">
-              <div
-                className="flex-none"
-                style={{ backgroundColor: product.color }}
-              >
-                <product.logo className="h-10 w-10" />
-              </div>
-              <div className="flex-auto text-sm text-gray-900">
-                {product.name}
-              </div>
-              <div className="flex-none text-right">
-                <div className="text-sm fonf$t-medium text-gray-900">
-                  €{product.price}
-                </div>
-                {/* <div
-                  className={clsx(
-                    'text-xs leading-5',
-                    product.difference.startsWith('+')
-                      ? 'text-red-500'
-                      : 'text-gray-500'
-                  )}
-                >
-                  {product.difference}
-                </div> */}
-              </div>
-            </div>
-          ))}
+       
         </div>
       </MotionAppScreenBody>
     </AppScreen>
@@ -547,7 +454,7 @@ export function PrimaryFeatures() {
     <section
       id="app"
       aria-label="Features for investing all your money"
-      className="bg-gray-900 py-20 sm:py-32"
+      className="bg-black py-20 sm:py-32"
     >
       <Container>
         <div className="mx-auto max-w-2xl lg:mx-0 lg:max-w-3xl">

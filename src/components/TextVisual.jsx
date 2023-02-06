@@ -2,12 +2,12 @@
 
 export const TextVisual = () => {
     return(
-        <section id="textVisual" className="relative bg-biege">
-          <div className="relative h-56 bg-red-600 sm:h-72 md:absolute md:left-0 md:h-full md:w-1/2">
+        <section id="textVisual" className="relative bg-red">
+          <div className="tvVisualContainer">
             <img className="h-full w-full object-cover" src="https://picnic.app/jobs/wp-content/uploads/sites/10/2022/08/cover-photo-min.jpg" alt="" />
             <div aria-hidden="true" className="absolute inset-0 bg-gradient-to-r from-white to-red-300 mix-blend-multiply"></div>
           </div>
-          <div className="relative mx-auto max-w-md py-12 px-6 sm:max-w-7xl sm:py-20 md:py-28 lg:px-8 lg:py-32">
+          <div className="tvTextContainer">
             <div className="md:ml-auto md:w-1/2 md:pl-10">
               <h2 className="text-lg font-semibold text-white">Join our amazing crew today!</h2>
               <p className="mt-2 text-3xl font-bold tracking-tight text-white sm:text-4xl">Check out our job openings naar jou</p>

@@ -22,9 +22,9 @@ function QrCodeBorder(props) {
 
 export function Footer() {
   return (
-    <footer className="border-t border-gray-200">
+    <footer className="footerContainer">
       <Container>
-        <div className="flex flex-col items-start justify-between gap-y-12 pt-16 pb-6 lg:flex-row lg:items-center lg:py-16">
+        <div className="footerInner">
           <div>
             <div className="flex items-center text-gray-900">
             <img className="h-full shake rounded-md" src="https://with-typescript-iota-self.vercel.app/assets/images/logo.svg" alt="" />
