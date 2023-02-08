@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-html-link-for-pages */
 import Head from 'next/head'
 import Link from 'next/link'
 import Image from 'next/image'
@@ -68,7 +69,8 @@ export default function Home() {
 
             </div>
             <div className="hidden lg:flex lg:flex-1 lg:justify-end">
-              <a href="#" className="text-sm font-semibold leading-6 text-white bg-red rounded-full p-2">All jobs</a>
+              {/* // eslint-disable-next-line @next/next/no-html-link-for-pages */}
+              <a href="/jobs" className="text-sm font-semibold leading-6 text-white bg-red rounded-full p-2">All jobs</a>
             </div>
           </nav>
           

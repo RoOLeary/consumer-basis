@@ -34,6 +34,7 @@ module.exports = {
     },
     extend: {
       width:{
+        '16': '4rem',
         '32': '8rem'
       },
       animation: {

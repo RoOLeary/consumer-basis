@@ -16,7 +16,7 @@ import { Video } from '@/components/Video'
 import { motion, useAnimation } from 'framer-motion';
 import { useInView } from "react-intersection-observer";
 import { useEffect, useState, useRef } from "react";
-
+import useDebounce from './../../hooks/useDebounce';
 import { jobs } from './../../lib/utils';
 
 export default function Jobs() {
@@ -26,6 +26,7 @@ export default function Jobs() {
   const [ref, inView] = useInView({ triggerOnce: false});
 
   const [query, setQuery] = useState('');
+  const debouncedSearch = useDebounce(query, 300)
   const searchForm = useRef(null);
   
   const searchFilter = (array) => {
@@ -37,12 +38,13 @@ export default function Jobs() {
   
   //Applying our search filter function to our array of countries recieved from the API
   const filtered = searchFilter(jobs);
+
   // eslint-disable-next-line no-console
   //Handling the input on our search bar
   const handleChange = (e) => {
     // eslint-disable-next-line no-console
-    setQuery(e.target.value)
-    console.log(e.target.value)
+    
+    setQuery(debouncedSearch)
   }
 
   return (
@@ -181,7 +183,7 @@ export default function Jobs() {
                           </h3>
                           <div className="col-span-6 sm:col-span-3 flex">
                             
-                            <input onChange={handleChange} type="text" name="search-term" id="search-term" className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-red-500 focus:ring-red-500 sm:text-sm" placeholder="Wat wil je doen?" />
+                            <input onChange={(e) => setQuery(e.target.value)} type="text" name="search-term" id="search-term" className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-red-500 focus:ring-red-500 sm:text-sm" placeholder="Wat wil je doen?" />
                             
                           </div>
                         </div>
@@ -318,269 +320,48 @@ export default function Jobs() {
                         <div className="overflow-hidden bg-white shadow sm:rounded-md">
                         <div className="overflow-hidden bg-white shadow sm:rounded-md">
                             <ul role="list" className="divide-y divide-gray-200">
-                              <li>
-                                <a href="#" className="block hover:bg-gray-50">
-                                  <div className="px-4 py-4 sm:px-6">
-                                    <div className="flex items-center justify-between">
-                                      <p className="truncate text-sm font-medium text-red-600">Java Developer</p>
-                                      <div className="ml-2 flex flex-shrink-0">
-                                        <p className="inline-flex rounded-full bg-green-100 px-2 text-xs font-semibold leading-5 text-green-800">Full-time</p>
-                                      </div>
-                                    </div>
-                                    <div className="mt-2 sm:flex sm:justify-between">
-                                      <div className="sm:flex">
-                                        <p className="flex items-center text-sm text-gray-500">
-                                          <svg className="mr-1.5 h-5 w-5 flex-shrink-0 text-gray-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                                            <path d="M7 8a3 3 0 100-6 3 3 0 000 6zM14.5 9a2.5 2.5 0 100-5 2.5 2.5 0 000 5zM1.615 16.428a1.224 1.224 0 01-.569-1.175 6.002 6.002 0 0111.908 0c.058.467-.172.92-.57 1.174A9.953 9.953 0 017 18a9.953 9.953 0 01-5.385-1.572zM14.5 16h-.106c.07-.297.088-.611.048-.933a7.47 7.47 0 00-1.588-3.755 4.502 4.502 0 015.874 2.636.818.818 0 01-.36.98A7.465 7.465 0 0114.5 16z" />
-                                          </svg>
-                                          Engineering
-                                        </p>
-                                        <p className="mt-2 flex items-center text-sm text-gray-500 sm:mt-0 sm:ml-6">
-                                          <svg className="mr-1.5 h-5 w-5 flex-shrink-0 text-gray-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                                            <path fillRule="evenodd" d="M9.69 18.933l.003.001C9.89 19.02 10 19 10 19s.11.02.308-.066l.002-.001.006-.003.018-.008a5.741 5.741 0 00.281-.14c.186-.096.446-.24.757-.433.62-.384 1.445-.966 2.274-1.765C15.302 14.988 17 12.493 17 9A7 7 0 103 9c0 3.492 1.698 5.988 3.355 7.584a13.731 13.731 0 002.273 1.765 11.842 11.842 0 00.976.544l.062.029.018.008.006.003zM10 11.25a2.25 2.25 0 100-4.5 2.25 2.25 0 000 4.5z" clipRule="evenodd" />
-                                          </svg>
-                                          Amsterdam
-                                        </p>
-                                      </div>
-                                      <div className="mt-2 flex items-center text-sm text-gray-500 sm:mt-0">
-                                        <svg className="mr-1.5 h-5 w-5 flex-shrink-0 text-gray-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                                          <path fillRule="evenodd" d="M5.75 2a.75.75 0 01.75.75V4h7V2.75a.75.75 0 011.5 0V4h.25A2.75 2.75 0 0118 6.75v8.5A2.75 2.75 0 0115.25 18H4.75A2.75 2.75 0 012 15.25v-8.5A2.75 2.75 0 014.75 4H5V2.75A.75.75 0 015.75 2zm-1 5.5c-.69 0-1.25.56-1.25 1.25v6.5c0 .69.56 1.25 1.25 1.25h10.5c.69 0 1.25-.56 1.25-1.25v-6.5c0-.69-.56-1.25-1.25-1.25H4.75z" clipRule="evenodd" />
-                                        </svg>
-                                        <p>
-                                          Closing on 
-                                          <time dateTime="2023-01-14"> Feb 14, 2023</time>
-                                        </p>
-                                      </div>
-                                    </div>
-                                  </div>
-                                </a>
-                              </li>
-                              <li>
-                                <a href="#" className="block hover:bg-gray-50">
-                                  <div className="px-4 py-4 sm:px-6">
-                                    <div className="flex items-center justify-between">
-                                      <p className="truncate text-sm font-medium text-red-600">Back End Developer</p>
-                                      <div className="ml-2 flex flex-shrink-0">
-                                        <p className="inline-flex rounded-full bg-green-100 px-2 text-xs font-semibold leading-5 text-green-800">Full-time</p>
-                                      </div>
-                                    </div>
-                                    <div className="mt-2 sm:flex sm:justify-between">
-                                      <div className="sm:flex">
-                                        <p className="flex items-center text-sm text-gray-500">
-                                          <svg className="mr-1.5 h-5 w-5 flex-shrink-0 text-gray-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                                            <path d="M7 8a3 3 0 100-6 3 3 0 000 6zM14.5 9a2.5 2.5 0 100-5 2.5 2.5 0 000 5zM1.615 16.428a1.224 1.224 0 01-.569-1.175 6.002 6.002 0 0111.908 0c.058.467-.172.92-.57 1.174A9.953 9.953 0 017 18a9.953 9.953 0 01-5.385-1.572zM14.5 16h-.106c.07-.297.088-.611.048-.933a7.47 7.47 0 00-1.588-3.755 4.502 4.502 0 015.874 2.636.818.818 0 01-.36.98A7.465 7.465 0 0114.5 16z" />
-                                          </svg>
-                                          Engineering
-                                        </p>
-                                        <p className="mt-2 flex items-center text-sm text-gray-500 sm:mt-0 sm:ml-6">
-                                          <svg className="mr-1.5 h-5 w-5 flex-shrink-0 text-gray-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                                            <path fillRule="evenodd" d="M9.69 18.933l.003.001C9.89 19.02 10 19 10 19s.11.02.308-.066l.002-.001.006-.003.018-.008a5.741 5.741 0 00.281-.14c.186-.096.446-.24.757-.433.62-.384 1.445-.966 2.274-1.765C15.302 14.988 17 12.493 17 9A7 7 0 103 9c0 3.492 1.698 5.988 3.355 7.584a13.731 13.731 0 002.273 1.765 11.842 11.842 0 00.976.544l.062.029.018.008.006.003zM10 11.25a2.25 2.25 0 100-4.5 2.25 2.25 0 000 4.5z" clipRule="evenodd" />
-                                          </svg>
-                                          Amsterdam
-                                        </p>
-                                      </div>
-                                      <div className="mt-2 flex items-center text-sm text-gray-500 sm:mt-0">
-                                        <svg className="mr-1.5 h-5 w-5 flex-shrink-0 text-gray-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                                          <path fillRule="evenodd" d="M5.75 2a.75.75 0 01.75.75V4h7V2.75a.75.75 0 011.5 0V4h.25A2.75 2.75 0 0118 6.75v8.5A2.75 2.75 0 0115.25 18H4.75A2.75 2.75 0 012 15.25v-8.5A2.75 2.75 0 014.75 4H5V2.75A.75.75 0 015.75 2zm-1 5.5c-.69 0-1.25.56-1.25 1.25v6.5c0 .69.56 1.25 1.25 1.25h10.5c.69 0 1.25-.56 1.25-1.25v-6.5c0-.69-.56-1.25-1.25-1.25H4.75z" clipRule="evenodd" />
-                                        </svg>
-                                        <p>
-                                          Closing on 
-                                          <time dateTime="2023-01-14"> Feb 14, 2023</time>
-                                        </p>
-                                      </div>
-                                    </div>
-                                  </div>
-                                </a>
-                              </li>
-                              <li>
-                                <a href="#" className="block hover:bg-gray-50">
-                                  <div className="px-4 py-4 sm:px-6">
-                                    <div className="flex items-center justify-between">
-                                      <p className="truncate text-sm font-medium text-red-600">Back End Developer</p>
-                                      <div className="ml-2 flex flex-shrink-0">
-                                        <p className="inline-flex rounded-full bg-green-100 px-2 text-xs font-semibold leading-5 text-green-800">Full-time</p>
-                                      </div>
-                                    </div>
-                                    <div className="mt-2 sm:flex sm:justify-between">
-                                      <div className="sm:flex">
-                                        <p className="flex items-center text-sm text-gray-500">
-                                          <svg className="mr-1.5 h-5 w-5 flex-shrink-0 text-gray-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                                            <path d="M7 8a3 3 0 100-6 3 3 0 000 6zM14.5 9a2.5 2.5 0 100-5 2.5 2.5 0 000 5zM1.615 16.428a1.224 1.224 0 01-.569-1.175 6.002 6.002 0 0111.908 0c.058.467-.172.92-.57 1.174A9.953 9.953 0 017 18a9.953 9.953 0 01-5.385-1.572zM14.5 16h-.106c.07-.297.088-.611.048-.933a7.47 7.47 0 00-1.588-3.755 4.502 4.502 0 015.874 2.636.818.818 0 01-.36.98A7.465 7.465 0 0114.5 16z" />
-                                          </svg>
-                                          Engineering
-                                        </p>
-                                        <p className="mt-2 flex items-center text-sm text-gray-500 sm:mt-0 sm:ml-6">
-                                          <svg className="mr-1.5 h-5 w-5 flex-shrink-0 text-gray-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                                            <path fillRule="evenodd" d="M9.69 18.933l.003.001C9.89 19.02 10 19 10 19s.11.02.308-.066l.002-.001.006-.003.018-.008a5.741 5.741 0 00.281-.14c.186-.096.446-.24.757-.433.62-.384 1.445-.966 2.274-1.765C15.302 14.988 17 12.493 17 9A7 7 0 103 9c0 3.492 1.698 5.988 3.355 7.584a13.731 13.731 0 002.273 1.765 11.842 11.842 0 00.976.544l.062.029.018.008.006.003zM10 11.25a2.25 2.25 0 100-4.5 2.25 2.25 0 000 4.5z" clipRule="evenodd" />
-                                          </svg>
-                                          Berlin
-                                        </p>
-                                      </div>
-                                      <div className="mt-2 flex items-center text-sm text-gray-500 sm:mt-0">
-                                        <svg className="mr-1.5 h-5 w-5 flex-shrink-0 text-gray-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                                          <path fillRule="evenodd" d="M5.75 2a.75.75 0 01.75.75V4h7V2.75a.75.75 0 011.5 0V4h.25A2.75 2.75 0 0118 6.75v8.5A2.75 2.75 0 0115.25 18H4.75A2.75 2.75 0 012 15.25v-8.5A2.75 2.75 0 014.75 4H5V2.75A.75.75 0 015.75 2zm-1 5.5c-.69 0-1.25.56-1.25 1.25v6.5c0 .69.56 1.25 1.25 1.25h10.5c.69 0 1.25-.56 1.25-1.25v-6.5c0-.69-.56-1.25-1.25-1.25H4.75z" clipRule="evenodd" />
-                                        </svg>
-                                        <p>
-                                          Closing on 
-                                          <time dateTime="2023-01-14"> Feb 14, 2023</time>
-                                        </p>
-                                      </div>
-                                    </div>
-                                  </div>
-                                </a>
-                              </li>
-                              <li>
-                                <a href="#" className="block hover:bg-gray-50">
-                                  <div className="px-4 py-4 sm:px-6">
-                                    <div className="flex items-center justify-between">
-                                      <p className="truncate text-sm font-medium text-red-600">Back End Developer</p>
-                                      <div className="ml-2 flex flex-shrink-0">
-                                        <p className="inline-flex rounded-full bg-green-100 px-2 text-xs font-semibold leading-5 text-green-800">Full-time</p>
-                                      </div>
-                                    </div>
-                                    <div className="mt-2 sm:flex sm:justify-between">
-                                      <div className="sm:flex">
-                                        <p className="flex items-center text-sm text-gray-500">
-                                          <svg className="mr-1.5 h-5 w-5 flex-shrink-0 text-gray-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                                            <path d="M7 8a3 3 0 100-6 3 3 0 000 6zM14.5 9a2.5 2.5 0 100-5 2.5 2.5 0 000 5zM1.615 16.428a1.224 1.224 0 01-.569-1.175 6.002 6.002 0 0111.908 0c.058.467-.172.92-.57 1.174A9.953 9.953 0 017 18a9.953 9.953 0 01-5.385-1.572zM14.5 16h-.106c.07-.297.088-.611.048-.933a7.47 7.47 0 00-1.588-3.755 4.502 4.502 0 015.874 2.636.818.818 0 01-.36.98A7.465 7.465 0 0114.5 16z" />
-                                          </svg>
-                                          Engineering
-                                        </p>
-                                        <p className="mt-2 flex items-center text-sm text-gray-500 sm:mt-0 sm:ml-6">
-                                          <svg className="mr-1.5 h-5 w-5 flex-shrink-0 text-gray-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                                            <path fillRule="evenodd" d="M9.69 18.933l.003.001C9.89 19.02 10 19 10 19s.11.02.308-.066l.002-.001.006-.003.018-.008a5.741 5.741 0 00.281-.14c.186-.096.446-.24.757-.433.62-.384 1.445-.966 2.274-1.765C15.302 14.988 17 12.493 17 9A7 7 0 103 9c0 3.492 1.698 5.988 3.355 7.584a13.731 13.731 0 002.273 1.765 11.842 11.842 0 00.976.544l.062.029.018.008.006.003zM10 11.25a2.25 2.25 0 100-4.5 2.25 2.25 0 000 4.5z" clipRule="evenodd" />
-                                          </svg>
-                                          Paris
-                                        </p>
-                                      </div>
-                                      <div className="mt-2 flex items-center text-sm text-gray-500 sm:mt-0">
-                                        <svg className="mr-1.5 h-5 w-5 flex-shrink-0 text-gray-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                                          <path fillRule="evenodd" d="M5.75 2a.75.75 0 01.75.75V4h7V2.75a.75.75 0 011.5 0V4h.25A2.75 2.75 0 0118 6.75v8.5A2.75 2.75 0 0115.25 18H4.75A2.75 2.75 0 012 15.25v-8.5A2.75 2.75 0 014.75 4H5V2.75A.75.75 0 015.75 2zm-1 5.5c-.69 0-1.25.56-1.25 1.25v6.5c0 .69.56 1.25 1.25 1.25h10.5c.69 0 1.25-.56 1.25-1.25v-6.5c0-.69-.56-1.25-1.25-1.25H4.75z" clipRule="evenodd" />
-                                        </svg>
-                                        <p>
-                                          Closing on 
-                                          <time dateTime="2023-01-14"> Feb 14, 2023</time>
-                                        </p>
-                                      </div>
-                                    </div>
-                                  </div>
-                                </a>
-                              </li>
-                              <li>
-                                <a href="#" className="block hover:bg-gray-50">
-                                  <div className="px-4 py-4 sm:px-6">
-                                    <div className="flex items-center justify-between">
-                                      <p className="truncate text-sm font-medium text-red-600">Back End Developer</p>
-                                      <div className="ml-2 flex flex-shrink-0">
-                                        <p className="inline-flex rounded-full bg-green-100 px-2 text-xs font-semibold leading-5 text-green-800">Full-time</p>
-                                      </div>
-                                    </div>
-                                    <div className="mt-2 sm:flex sm:justify-between">
-                                      <div className="sm:flex">
-                                        <p className="flex items-center text-sm text-gray-500">
-                                          <svg className="mr-1.5 h-5 w-5 flex-shrink-0 text-gray-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                                            <path d="M7 8a3 3 0 100-6 3 3 0 000 6zM14.5 9a2.5 2.5 0 100-5 2.5 2.5 0 000 5zM1.615 16.428a1.224 1.224 0 01-.569-1.175 6.002 6.002 0 0111.908 0c.058.467-.172.92-.57 1.174A9.953 9.953 0 017 18a9.953 9.953 0 01-5.385-1.572zM14.5 16h-.106c.07-.297.088-.611.048-.933a7.47 7.47 0 00-1.588-3.755 4.502 4.502 0 015.874 2.636.818.818 0 01-.36.98A7.465 7.465 0 0114.5 16z" />
-                                          </svg>
-                                          Engineering
-                                        </p>
-                                        <p className="mt-2 flex items-center text-sm text-gray-500 sm:mt-0 sm:ml-6">
-                                          <svg className="mr-1.5 h-5 w-5 flex-shrink-0 text-gray-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                                            <path fillRule="evenodd" d="M9.69 18.933l.003.001C9.89 19.02 10 19 10 19s.11.02.308-.066l.002-.001.006-.003.018-.008a5.741 5.741 0 00.281-.14c.186-.096.446-.24.757-.433.62-.384 1.445-.966 2.274-1.765C15.302 14.988 17 12.493 17 9A7 7 0 103 9c0 3.492 1.698 5.988 3.355 7.584a13.731 13.731 0 002.273 1.765 11.842 11.842 0 00.976.544l.062.029.018.008.006.003zM10 11.25a2.25 2.25 0 100-4.5 2.25 2.25 0 000 4.5z" clipRule="evenodd" />
-                                          </svg>
-                                          Rotterdam
-                                        </p>
-                                      </div>
-                                      <div className="mt-2 flex items-center text-sm text-gray-500 sm:mt-0">
-                                        <svg className="mr-1.5 h-5 w-5 flex-shrink-0 text-gray-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                                          <path fillRule="evenodd" d="M5.75 2a.75.75 0 01.75.75V4h7V2.75a.75.75 0 011.5 0V4h.25A2.75 2.75 0 0118 6.75v8.5A2.75 2.75 0 0115.25 18H4.75A2.75 2.75 0 012 15.25v-8.5A2.75 2.75 0 014.75 4H5V2.75A.75.75 0 015.75 2zm-1 5.5c-.69 0-1.25.56-1.25 1.25v6.5c0 .69.56 1.25 1.25 1.25h10.5c.69 0 1.25-.56 1.25-1.25v-6.5c0-.69-.56-1.25-1.25-1.25H4.75z" clipRule="evenodd" />
-                                        </svg>
-                                        <p>
-                                          Closing on 
-                                          <time dateTime="2023-01-14"> Feb 14, 2023</time>
-                                        </p>
-                                      </div>
-                                    </div>
-                                  </div>
-                                </a>
-                              </li>
-
-                              <li>
-                                <a href="#" className="block hover:bg-gray-50">
-                                  <div className="px-4 py-4 sm:px-6">
-                                    <div className="flex items-center justify-between">
-                                      <p className="truncate text-sm font-medium text-red-600">Front End Developer</p>
-                                      <div className="ml-2 flex flex-shrink-0">
-                                        <p className="inline-flex rounded-full bg-green-100 px-2 text-xs font-semibold leading-5 text-green-800">Full-time</p>
-                                      </div>
-                                    </div>
-                                    <div className="mt-2 sm:flex sm:justify-between">
-                                      <div className="sm:flex">
-                                        <p className="flex items-center text-sm text-gray-500">
-                                          <svg className="mr-1.5 h-5 w-5 flex-shrink-0 text-gray-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                                            <path d="M7 8a3 3 0 100-6 3 3 0 000 6zM14.5 9a2.5 2.5 0 100-5 2.5 2.5 0 000 5zM1.615 16.428a1.224 1.224 0 01-.569-1.175 6.002 6.002 0 0111.908 0c.058.467-.172.92-.57 1.174A9.953 9.953 0 017 18a9.953 9.953 0 01-5.385-1.572zM14.5 16h-.106c.07-.297.088-.611.048-.933a7.47 7.47 0 00-1.588-3.755 4.502 4.502 0 015.874 2.636.818.818 0 01-.36.98A7.465 7.465 0 0114.5 16z" />
-                                          </svg>
-                                          Engineering
-                                        </p>
-                                        <p className="mt-2 flex items-center text-sm text-gray-500 sm:mt-0 sm:ml-6">
-                                          <svg className="mr-1.5 h-5 w-5 flex-shrink-0 text-gray-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                                            <path fillRule="evenodd" d="M9.69 18.933l.003.001C9.89 19.02 10 19 10 19s.11.02.308-.066l.002-.001.006-.003.018-.008a5.741 5.741 0 00.281-.14c.186-.096.446-.24.757-.433.62-.384 1.445-.966 2.274-1.765C15.302 14.988 17 12.493 17 9A7 7 0 103 9c0 3.492 1.698 5.988 3.355 7.584a13.731 13.731 0 002.273 1.765 11.842 11.842 0 00.976.544l.062.029.018.008.006.003zM10 11.25a2.25 2.25 0 100-4.5 2.25 2.25 0 000 4.5z" clipRule="evenodd" />
-                                          </svg>
-                                          Amsterdam
-                                        </p>
-                                      </div>
-                                      <div className="mt-2 flex items-center text-sm text-gray-500 sm:mt-0">
-                                        <svg className="mr-1.5 h-5 w-5 flex-shrink-0 text-gray-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                                          <path fillRule="evenodd" d="M5.75 2a.75.75 0 01.75.75V4h7V2.75a.75.75 0 011.5 0V4h.25A2.75 2.75 0 0118 6.75v8.5A2.75 2.75 0 0115.25 18H4.75A2.75 2.75 0 012 15.25v-8.5A2.75 2.75 0 014.75 4H5V2.75A.75.75 0 015.75 2zm-1 5.5c-.69 0-1.25.56-1.25 1.25v6.5c0 .69.56 1.25 1.25 1.25h10.5c.69 0 1.25-.56 1.25-1.25v-6.5c0-.69-.56-1.25-1.25-1.25H4.75z" clipRule="evenodd" />
-                                        </svg>
-                                        <p>
-                                          Closing on 
-                                          <time dateTime="2023-01-14"> Feb 14, 2023</time>
-                                        </p>
-                                      </div>
-                                    </div>
-                                  </div>
-                                </a>
-                              </li>
-
-                              <li>
-                                <a href="#" className="block hover:bg-gray-50">
-                                  <div className="px-4 py-4 sm:px-6">
-                                    <div className="flex items-center justify-between">
-                                      <h2 className="truncate text-sm font-medium text-red-600">User Interface Designer</h2>
-                                      <div className="ml-2 flex flex-shrink-0">
-                                        <p className="inline-flex rounded-full bg-green-100 px-2 text-xs font-semibold leading-5 text-green-800">Full-time</p>
-                                      </div>
-                                    </div>
-                                    <div className="mt-2 sm:flex sm:justify-between">
-                                      <div className="sm:flex">
-                                        <p className="flex items-center text-sm text-gray-500">
-                                          <svg className="mr-1.5 h-5 w-5 flex-shrink-0 text-gray-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                                            <path d="M7 8a3 3 0 100-6 3 3 0 000 6zM14.5 9a2.5 2.5 0 100-5 2.5 2.5 0 000 5zM1.615 16.428a1.224 1.224 0 01-.569-1.175 6.002 6.002 0 0111.908 0c.058.467-.172.92-.57 1.174A9.953 9.953 0 017 18a9.953 9.953 0 01-5.385-1.572zM14.5 16h-.106c.07-.297.088-.611.048-.933a7.47 7.47 0 00-1.588-3.755 4.502 4.502 0 015.874 2.636.818.818 0 01-.36.98A7.465 7.465 0 0114.5 16z" />
-                                          </svg>
-                                          Design
-                                        </p>
-                                        <p className="mt-2 flex items-center text-sm text-gray-500 sm:mt-0 sm:ml-6">
-                                          <svg className="mr-1.5 h-5 w-5 flex-shrink-0 text-gray-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                                            <path fillRule="evenodd" d="M9.69 18.933l.003.001C9.89 19.02 10 19 10 19s.11.02.308-.066l.002-.001.006-.003.018-.008a5.741 5.741 0 00.281-.14c.186-.096.446-.24.757-.433.62-.384 1.445-.966 2.274-1.765C15.302 14.988 17 12.493 17 9A7 7 0 103 9c0 3.492 1.698 5.988 3.355 7.584a13.731 13.731 0 002.273 1.765 11.842 11.842 0 00.976.544l.062.029.018.008.006.003zM10 11.25a2.25 2.25 0 100-4.5 2.25 2.25 0 000 4.5z" clipRule="evenodd" />
-                                          </svg>
-                                          Amsterdam (HQ)
-                                        </p>
-                                      </div>
-                                      <div className="mt-2 flex items-center text-sm text-gray-500 sm:mt-0">
-                                        <svg className="mr-1.5 h-5 w-5 flex-shrink-0 text-gray-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                                          <path fillRule="evenodd" d="M5.75 2a.75.75 0 01.75.75V4h7V2.75a.75.75 0 011.5 0V4h.25A2.75 2.75 0 0118 6.75v8.5A2.75 2.75 0 0115.25 18H4.75A2.75 2.75 0 012 15.25v-8.5A2.75 2.75 0 014.75 4H5V2.75A.75.75 0 015.75 2zm-1 5.5c-.69 0-1.25.56-1.25 1.25v6.5c0 .69.56 1.25 1.25 1.25h10.5c.69 0 1.25-.56 1.25-1.25v-6.5c0-.69-.56-1.25-1.25-1.25H4.75z" clipRule="evenodd" />
-                                        </svg>
-                                        <p>
-                                          Closing on 
-                                          <time dateTime="2023-01-14"> Feb 14, 2023</time>
-                                        </p>
-                                      </div>
-                                    </div>
-                                  </div>
-                                </a>
-                              </li>
-                            </ul>
-                          </div>
+                              {filtered ? filtered.map((job, id) => (
+                                 <li key={id}>
+                                 <Link href={`jobs${job.link}`} className="block hover:bg-gray-50">
+                                   <div className="px-4 py-4 sm:px-6">
+                                     <div className="flex items-center justify-between">
+                                       <p className="truncate text-sm font-medium text-red-600">{job.title}</p>
+                                       <div className="ml-2 flex flex-shrink-0">
+                                         <p className="inline-flex rounded-full bg-green-100 px-2 text-xs font-semibold leading-5 text-green-800 capitalize">{job.type}</p>
+                                       </div>
+                                     </div>
+                                     <div className="mt-2 sm:flex sm:justify-between">
+                                       <div className="sm:flex">
+                                         <p className="flex items-center text-sm text-gray-500">
+                                           <svg className="mr-1.5 h-5 w-5 flex-shrink-0 text-gray-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                                             <path d="M7 8a3 3 0 100-6 3 3 0 000 6zM14.5 9a2.5 2.5 0 100-5 2.5 2.5 0 000 5zM1.615 16.428a1.224 1.224 0 01-.569-1.175 6.002 6.002 0 0111.908 0c.058.467-.172.92-.57 1.174A9.953 9.953 0 017 18a9.953 9.953 0 01-5.385-1.572zM14.5 16h-.106c.07-.297.088-.611.048-.933a7.47 7.47 0 00-1.588-3.755 4.502 4.502 0 015.874 2.636.818.818 0 01-.36.98A7.465 7.465 0 0114.5 16z" />
+                                           </svg>
+                                           {job.department}
+                                         </p>
+                                         <p className="mt-2 flex items-center text-sm text-gray-500 sm:mt-0 sm:ml-6">
+                                           <svg className="mr-1.5 h-5 w-5 flex-shrink-0 text-gray-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                                             <path fillRule="evenodd" d="M9.69 18.933l.003.001C9.89 19.02 10 19 10 19s.11.02.308-.066l.002-.001.006-.003.018-.008a5.741 5.741 0 00.281-.14c.186-.096.446-.24.757-.433.62-.384 1.445-.966 2.274-1.765C15.302 14.988 17 12.493 17 9A7 7 0 103 9c0 3.492 1.698 5.988 3.355 7.584a13.731 13.731 0 002.273 1.765 11.842 11.842 0 00.976.544l.062.029.018.008.006.003zM10 11.25a2.25 2.25 0 100-4.5 2.25 2.25 0 000 4.5z" clipRule="evenodd" />
+                                           </svg>
+                                           {job.location}
+                                         </p>
+                                       </div>
+                                       <div className="mt-2 flex items-center text-sm text-gray-500 sm:mt-0">
+                                         <svg className="mr-1.5 h-5 w-5 flex-shrink-0 text-gray-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                                           <path fillRule="evenodd" d="M5.75 2a.75.75 0 01.75.75V4h7V2.75a.75.75 0 011.5 0V4h.25A2.75 2.75 0 0118 6.75v8.5A2.75 2.75 0 0115.25 18H4.75A2.75 2.75 0 012 15.25v-8.5A2.75 2.75 0 014.75 4H5V2.75A.75.75 0 015.75 2zm-1 5.5c-.69 0-1.25.56-1.25 1.25v6.5c0 .69.56 1.25 1.25 1.25h10.5c.69 0 1.25-.56 1.25-1.25v-6.5c0-.69-.56-1.25-1.25-1.25H4.75z" clipRule="evenodd" />
+                                         </svg>
+                                         <p>
+                                           Closing on 
+                                           <time dateTime="2023-01-14"> Feb 14, 2023</time>
+                                         </p>
+                                       </div>
+                                     </div>
+                                   </div>
+                                 </Link>
+                               </li>
+                                )
+                              ) : ''}
+                          </ul>
+                        </div>
 
                         </div>
                       </div>
