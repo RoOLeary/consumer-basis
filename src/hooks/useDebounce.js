@@ -13,5 +13,6 @@ export default function useDebounce(value, delay) {
     }
   }, [value, delay])
 
+  // send back debounced value to use in component. 
   return debouncedValue
 }

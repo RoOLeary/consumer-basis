@@ -18,7 +18,7 @@ import { motion, useAnimation } from 'framer-motion';
 import { useInView } from "react-intersection-observer";
 import { useEffect } from "react";
 
-import { jobs } from '../lib/utils';
+import { jobCats } from '../lib/utils';
 
 export default function Home() {
 
@@ -140,10 +140,10 @@ export default function Home() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="sm:text-center"><h2 className="text-3xl font-black tracking-tight text-gray-900 text-left mb-8">What is your next Challenge?</h2></div>
             <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-2">
-            {jobs ? jobs.map((job, id) => (
+            {jobCats ? jobCats.map((job, id) => (
 
               <div key={job.id} className="flex justify-center text-6xlbg-gray-100">
-                <Link className="block relative md:h-48 overflow-hidden rounded" href={`${router.asPath}berlin`}>
+                <Link className="block relative md:h-48 overflow-hidden rounded w-full" href={`${router.asPath}berlin`}>
                   <Image width={640} height={415} alt="ecommerce" className="object-cover object-center w-full h-full block" src={job.jobImage} />
                   <div className="mt-4 absolute top-0 right-0 left-0 bottom-0">
                     <h3 className="text-gray-500 text-xs tracking-widest title-font mb-1 absolute bg-white p-2 rounded" style={{ "top": "50%", "right": "50%", 
@@ -152,7 +152,7 @@ export default function Home() {
                 </Link>
               </div>
               )
-              ) : ''}
+              ) : <p>No results found</p>}
               
             </div>
         </div>
