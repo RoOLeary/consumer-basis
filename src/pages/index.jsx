@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-html-link-for-pages */
 import Head from 'next/head'
 import Link from 'next/link'
 import Image from 'next/image'
@@ -17,9 +18,13 @@ import { motion, useAnimation } from 'framer-motion';
 import { useInView } from "react-intersection-observer";
 import { useEffect } from "react";
 
-import { jobs } from '../lib/utils';
+import { jobCats } from '../lib/utils';
+import { GetStaticProps } from 'next'
 
-export default function Home() {
+const Home = ({ page }) => {
+
+
+  console.log(page[0]);
 
   const router = useRouter(); 
   const control = useAnimation()
@@ -68,7 +73,8 @@ export default function Home() {
 
             </div>
             <div className="hidden lg:flex lg:flex-1 lg:justify-end">
-              <a href="#" className="text-sm font-semibold leading-6 text-white bg-red rounded-full p-2">All jobs</a>
+              {/* // eslint-disable-next-line @next/next/no-html-link-for-pages */}
+              <a href="/jobs" className="text-sm font-semibold leading-6 text-white bg-red rounded-full p-2">All jobs</a>
             </div>
           </nav>
           
@@ -113,7 +119,7 @@ export default function Home() {
                 </div>
               </div>
               <div className="text-left">
-                <h1 className="text-4xl font-black tracking-tight text-white sm:text-6xl">Join the grocery revolution</h1>
+                <h1 className="text-4xl font-black tracking-tight text-white sm:text-6xl">{page ? page[0].title.rendered : 'title here'}</h1>
                 {/* <p className="mt-6 text-lg leading-8 text-gray-600">Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo. Elit sunt amet fugiat veniam occaecat fugiat aliqua.</p> */}
                 <div className="mt-10 flex items-center justify-start gap-x-6">
                   <Link href={"/jobs"} className="rounded-md bg-red-600 px-3.5 py-1.5 text-base font-semibold leading-7 text-white shadow-sm hover:bg-red-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red-600">All Jobs</Link>
@@ -134,14 +140,15 @@ export default function Home() {
           </div>
         </main>
       </div>
+      <div dangerouslySetInnerHTML={{__html: page[0].content.rendered}} />
       <section id="jobs" className="relative bg-white pt-20">      
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="sm:text-center"><h2 className="text-3xl font-black tracking-tight text-gray-900 text-left mb-8">What is your next Challenge?</h2></div>
             <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-2">
-            {jobs ? jobs.map((job, id) => (
+            {/* {jobCats ? jobCats.map((job, id) => (
 
               <div key={job.id} className="flex justify-center text-6xlbg-gray-100">
-                <Link className="block relative md:h-48 overflow-hidden rounded" href={`${router.asPath}berlin`}>
+                <Link className="block relative md:h-48 overflow-hidden rounded w-full" href={`${router.asPath}berlin`}>
                   <Image width={640} height={415} alt="ecommerce" className="object-cover object-center w-full h-full block" src={job.jobImage} />
                   <div className="mt-4 absolute top-0 right-0 left-0 bottom-0">
                     <h3 className="text-gray-500 text-xs tracking-widest title-font mb-1 absolute bg-white p-2 rounded" style={{ "top": "50%", "right": "50%", 
@@ -150,8 +157,9 @@ export default function Home() {
                 </Link>
               </div>
               )
-              ) : ''}
+              ) : <p>No results found</p>} */}
               
+              {/* {page[0].content.rendered} */}
             </div>
         </div>
       </section>
@@ -197,4 +205,34 @@ export default function Home() {
   <Footer />
 </>
 )
+              }
+// // This also gets called at build time
+
+export const getStaticProps = async({ params }) => {
+    
+    const slug = params?.query?.slug ? params?.query?.slug : 'test-article-three'
+    let sectionHandle = 'pages';
+    const res = await fetch(`https://picnic.app/nl/wp-json/wp/v2/${sectionHandle}?slug=new-home-page`);
+    const data = await res.json();
+
+    const preview = params?.preview;
+    let prevData;
+
+    if(preview){
+        console.log('preview is true');
+        const previewData = params?.previewData;
+        const prevResponse = await fetch(`https://servd-test-staging.cl-eu-west-3.servd.dev/api/${sectionHandle}/${slug}.json?token=${previewData['token']}`);
+        prevData = await prevResponse.json()
+        
+    } 
+    let page = preview ? prevData : data;
+
+    return {
+        props: { 
+            preview: preview ? true : false,
+            page: page
+        }
+    };
 }
+
+export default Home; 
