@@ -165,9 +165,9 @@ const Home = ({ page }) => {
         </div>
       </section>
       <ShortCut />
-      <Perks />
+      {/* <Perks />
       <JoinUs />
-      <JobTestimonial />
+      <JobTestimonial /> */}
       <Video /> 
      
       <TextVisual />

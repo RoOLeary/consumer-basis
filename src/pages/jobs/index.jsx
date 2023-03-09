@@ -405,8 +405,8 @@ export default function Jobs() {
             </div>
       </section>
       
-      <TextVisual />
-      <JoinUs />
+      {/* <TextVisual />
+      <JoinUs /> */}
     <Footer />
     </>
   )
